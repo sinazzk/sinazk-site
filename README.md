@@ -2,12 +2,18 @@
 
 The live site for Sina Zibakerdar's portfolio, hosted on hidata.org (cPanel shared hosting).
 
+## Staging
+
+Deploys currently go to **new.sinazk.com** (folder `~/new.sinazk.com`), not the live site. The deploy step also writes a `robots.txt` that blocks search engines.
+
+To launch: in `.cpanel.yml`, change `DEPLOYPATH` to `$HOME/public_html/` and remove the `robots.txt` line. Back up the old `public_html` first.
+
 ## How deploys work
 
 1. Push changes to `main` on GitHub.
 2. In cPanel → Git Version Control → Manage → **Pull or Deploy**:
    - **Update from Remote** pulls the latest commit from GitHub.
-   - **Deploy HEAD Commit** runs `.cpanel.yml`, which copies `public/` into `public_html`.
+   - **Deploy HEAD Commit** runs `.cpanel.yml`, which copies `public/` into the deploy folder (see Staging).
 
 ## Layout
 
