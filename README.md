@@ -19,6 +19,7 @@ To launch: in `.cpanel.yml`, change `DEPLOYPATH` to `/home/sinazkco/public_html/
 
 - `public/` — everything here goes live. Only put files you're happy for anyone to see.
 - `.cpanel.yml` — the deploy step.
+- `src/pages/` — each page's main content. `tools/build.py` wraps it in the shared head, header and footer and writes `public/<page>/index.html`. After editing, run `python3 tools/build.py` and commit the regenerated files in `public/`.
 
 ## Rules
 

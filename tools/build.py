@@ -13,15 +13,14 @@ SRC = os.path.join(ROOT, 'src', 'pages')
 OUT = os.path.join(ROOT, 'public')
 SITE = 'https://sinazk.com'
 CV = 'https://drive.google.com/file/d/1TX_gvWSUKH6xAQ0qkMHym0XR-vtFZKS3/view?usp=sharing'
-VERSION = '20261119'  # bump to bust caches when CSS/JS change
+VERSION = '20261119b'  # bump to bust caches when CSS/JS change
 
 PAGES = [
     dict(src='index.html', out='index.html', path='/',
          title='Sina Zibakerdar · Human-Centred Product Designer',
-         description='Sina Zibakerdar is a product designer in London and Tehran who designs learning platforms, collaboration tools and AI-powered workflows. Case studies, CV and contact.',
+         description='Sina Zibakerdar is a human-centred product designer who designs learning platforms, collaboration tools and AI-powered workflows. Case studies, CV and contact.',
          og='/assets/img/og/home.jpg', css=['home'], js=['/assets/hero-stage/hero-stage.js', '/assets/js/home.js'],
-         extra_css=['/assets/hero-stage/hero-stage.css'], nav='home',
-         preload=[]),
+         extra_css=['/assets/hero-stage/hero-stage.css'], nav='home'),
 ]
 
 FONT_PRELOADS = ['space-grotesk-400', 'space-grotesk-500']
@@ -54,8 +53,6 @@ def head(p):
     ]
     for f in FONT_PRELOADS:
         lines.append('<link rel="preload" href="/assets/fonts/%s.woff2" as="font" type="font/woff2" crossorigin>' % f)
-    for pre in p.get('preload', []):
-        lines.append('<link rel="preload" href="%s" as="image">' % pre)
     for c in css:
         lines.append('<link rel="stylesheet" href="%s?v=%s">' % (c, VERSION))
     lines.append('<script src="/assets/js/site.js?v=%s" defer></script>' % VERSION)

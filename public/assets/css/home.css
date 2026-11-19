@@ -1,6 +1,5 @@
 /* sinazk.com · homepage */
 
-.wrap{position:relative;max-width:1200px;margin:0 auto;padding-left:32px;padding-right:32px}
 
 /* ── Hero ── */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--color-border)}
@@ -37,7 +36,8 @@
 .work-head h2{margin:0}
 .work-head p{margin:0;color:var(--color-text-tertiary);max-width:380px}
 .work-list{display:flex;flex-direction:column;gap:32px}
-.card{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));background:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:20px;overflow:hidden;text-decoration:none;color:var(--color-text-primary);transition:transform var(--dur-ui) var(--ease-out),box-shadow var(--dur-ui) ease,border-color 200ms ease}
+.card,.tt-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));background:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:20px;overflow:hidden}
+.card{text-decoration:none;color:var(--color-text-primary);transition:transform var(--dur-ui) var(--ease-out),box-shadow var(--dur-ui) ease,border-color 200ms ease}
 .card:hover{color:var(--color-text-primary)}
 .card-media{overflow:hidden;min-height:340px}
 .card-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--dur-media) var(--ease-out)}
@@ -58,11 +58,11 @@
 
 /* TopTech: coming-soon card with a quiet dot field */
 .tt-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));background:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:20px;overflow:hidden}
-.tt-cover{position:relative;min-height:340px;overflow:hidden;background:#F3F2EE;border-right:1px solid var(--color-border);touch-action:pan-y}
+.tt-cover{position:relative;min-height:340px;overflow:hidden;background:var(--color-bg-sunken);border-right:1px solid var(--color-border);touch-action:pan-y}
 .tt-cover canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .tt-label{position:absolute;font-family:var(--font-mono);font-size:11px;line-height:16px;letter-spacing:.12em;color:var(--color-text-tertiary);pointer-events:none}
 .tt-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none;text-align:center}
-.tt-mark b{font:500 32px/40px var(--font-sans);letter-spacing:-.01em;color:var(--color-text-primary);background:rgba(243,242,238,.85);padding:0 10px;border-radius:8px}
+.tt-mark b{font:500 32px/40px var(--font-sans);letter-spacing:-.01em;color:var(--color-text-primary);background:color-mix(in srgb, var(--color-bg-sunken) 85%, transparent);padding:0 10px;border-radius:8px}
 .tt-mark .t-cap{color:var(--color-text-tertiary);white-space:nowrap}
 .tt-soon{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:6px 12px;border-radius:999px;background:var(--color-accent-subtle);color:var(--color-accent-text);box-shadow:inset 0 0 0 1px var(--color-accent-border)}
 .tt-soon::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--color-accent)}
@@ -114,4 +114,4 @@
 }
 @keyframes mailwave{0%{transform:none}35%{transform:translateY(-.1em)}100%{transform:none}}
 @keyframes mailspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.flourish{animation:none}}
+@media (prefers-reduced-motion:reduce){.flourish,.mail .ch,.mail .at{animation:none!important}}

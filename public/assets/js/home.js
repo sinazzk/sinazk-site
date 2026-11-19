@@ -9,17 +9,11 @@
     var el = wrap && wrap.querySelector('.hero-stage');
     if (!el) return;
     var links = { superreach: '/work/superreach/', ocdj: '/work/office-culture-dj/', soksok: '/work/sok-sok/' };
-    var tries = 0;
-    (function tryMount() {
-      if (window.SinazkHeroStage) {
-        try {
-          window.SinazkHeroStage.mount(el, { links: links, start: 0 });
-          requestAnimationFrame(function () { requestAnimationFrame(function () { wrap.classList.add('is-live'); }); });
-        } catch (err) { /* keep the still drawing */ }
-        return;
-      }
-      if (++tries < 100) setTimeout(tryMount, 100);
-    })();
+    if (!window.SinazkHeroStage) return; // keep the still drawing
+    try {
+      window.SinazkHeroStage.mount(el, { links: links, start: 0 });
+      requestAnimationFrame(function () { requestAnimationFrame(function () { wrap.classList.add('is-live'); }); });
+    } catch (err) { /* keep the still drawing */ }
   })();
 
   /* ── TopTech card: a quiet dot field that swells toward the pointer; a tap sends out a ripple ── */
