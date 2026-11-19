@@ -1,0 +1,93 @@
+/* sinazk.com · about */
+
+.ab-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--color-border)}
+.ab-hero-in{padding-top:96px;padding-bottom:80px;align-items:center}
+.ab-intro{display:flex;flex-direction:column;gap:28px;min-width:0}
+.ab-intro h1,.ab-intro p{margin:0}
+.ab-intro p{color:var(--color-text-secondary);max-width:640px}
+.ab-actions{display:flex;gap:12px;flex-wrap:wrap}
+.ab-figure{margin:0;display:flex;flex-direction:column;gap:16px;min-width:0;max-width:420px;justify-self:end;width:100%}
+.ab-figure img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:20px}
+.ab-facts{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;padding:16px 0 4px;border-top:1px solid var(--color-border)}
+.ab-facts dt{color:var(--color-text-tertiary)}
+.ab-facts dd{margin:0}
+
+.ab-sec{padding-top:32px;padding-bottom:96px}
+.ab-sec.first{padding-top:96px}
+.ab-sec > canvas.hline{margin:-2px 0 40px}
+.ab-sec h2{margin:0}
+.ab-sec-title{margin-bottom:32px!important}
+.ab-split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:start}
+.ab-col{display:flex;flex-direction:column;gap:20px;min-width:0}
+.ab-col p{margin:0;color:var(--color-text-secondary)}
+@media (max-width:960px){.ab-split{grid-template-columns:minmax(0,1fr)}.ab-figure{justify-self:start}}
+
+/* Labelled lists: story facts and skills */
+.ab-dl{margin:0;display:flex;flex-direction:column}
+.ab-dl dt{padding-top:16px;border-top:1px solid var(--color-border);color:var(--color-text-tertiary)}
+.ab-dl dd{margin:8px 0 24px}
+.ab-dl.muted dd{color:var(--color-text-secondary)}
+
+/* How I work */
+.ab-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+.ab-card{border:1px solid var(--color-border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:8px;background:var(--color-bg-surface)}
+.ab-card h3,.ab-card p{margin:0}
+.ab-card p{color:var(--color-text-secondary)}
+
+/* Experience timeline */
+.ab-xps{border-top:1px solid var(--color-border)}
+.ab-xp{display:grid;grid-template-columns:168px minmax(0,1fr) auto;gap:8px 32px;padding:24px 0;border-bottom:1px solid var(--color-border);align-items:baseline}
+.ab-xp > .t-cap,.ab-xp span.t-ps{color:var(--color-text-tertiary)}
+.ab-xp > div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.ab-xp h3{margin:0}
+.ab-xp p{margin:6px 0 0;color:var(--color-text-secondary);max-width:640px}
+.ab-xp.muted{color:var(--color-text-tertiary)}
+.ab-xp a{display:inline-block;padding:6px 0;font-weight:600;color:var(--color-accent-text);text-decoration:none;white-space:nowrap}
+@media (hover:hover) and (pointer:fine){.ab-xp a:hover .arrow{transform:translateX(4px)}}
+@media (max-width:760px){.ab-xp{grid-template-columns:minmax(0,1fr);gap:6px}.ab-xp > :last-child{justify-self:start}}
+
+/* Education */
+.ab-edu{display:flex;flex-direction:column;border-top:1px solid var(--color-border)}
+.ab-edu > div{padding:16px 0;border-bottom:1px solid var(--color-border);display:flex;flex-direction:column;gap:4px}
+.ab-edu .t-cap,.ab-edu .t-ps{color:var(--color-text-tertiary)}
+.ab-edu .t-pm{font-weight:600}
+.ab-langs{margin-top:16px!important}
+
+/* Outside work: hobby icons that crossfade, with a hover flourish */
+.hob{position:relative;height:304px;border:1px solid var(--color-border);border-radius:16px;background:var(--color-bg-surface);overflow:hidden;color:var(--color-text-primary);background-image:radial-gradient(rgba(16,24,31,.10) 1px,transparent 1.2px);background-size:18px 18px;background-position:9px 9px}
+.hob-item{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;opacity:0;animation:hobFade 12s cubic-bezier(.4,0,.2,1) infinite both}
+.hob-item:nth-child(2){animation-delay:-9s}.hob-item:nth-child(3){animation-delay:-6s}.hob-item:nth-child(4){animation-delay:-3s}
+.hob-item .t-cap{color:var(--color-text-tertiary);transition:color .3s ease}
+.hob-ic{width:128px;height:128px;display:block;overflow:visible;transition:transform .5s cubic-bezier(.2,.8,.2,1),color .3s ease}
+@keyframes hobFade{0%{opacity:0;filter:blur(6px)}5%,21%{opacity:1;filter:blur(0)}27%,100%{opacity:0;filter:blur(6px)}}
+@media (hover:hover) and (pointer:fine){
+  .hob:hover .hob-item{animation-play-state:paused}
+  .hob:hover .hob-ic{color:var(--color-accent-solid);transform:scale(1.06)}
+  .hob:hover .hob-item .t-cap{color:var(--color-accent-text)}
+  .hob:hover .hob-guitar .hob-ic{animation:hobRock .9s ease-in-out infinite}
+  .hob:hover .hob-tennis .hob-racket{transform-box:fill-box;transform-origin:85% 90%;animation:hobSwing 1.1s ease-in-out infinite}
+  .hob:hover .hob-tennis .hob-ball{animation:hobBounce 1.1s ease-in-out infinite}
+  .hob:hover .hob-run .hob-ic{animation:hobHop .6s ease-in-out infinite}
+  .hob:hover .hob-run .hob-dash{animation:hobDash .6s linear infinite}
+  .hob:hover .hob-read .hob-page{transform-box:fill-box;transform-origin:0 50%;animation:hobFlip 1.4s ease-in-out infinite}
+}
+@keyframes hobRock{0%,100%{transform:scale(1.06) rotate(0)}25%{transform:scale(1.06) rotate(-7deg)}75%{transform:scale(1.06) rotate(7deg)}}
+@keyframes hobSwing{0%,100%{transform:rotate(0)}45%{transform:rotate(-22deg)}}
+@keyframes hobBounce{0%,100%{transform:translateY(0)}45%{transform:translate(-6px,-12px)}}
+@keyframes hobHop{0%,100%{transform:scale(1.06) translateY(0)}50%{transform:scale(1.06) translate(4px,-6px)}}
+@keyframes hobDash{0%{opacity:1;transform:translateX(0)}100%{opacity:0;transform:translateX(-10px)}}
+@keyframes hobFlip{0%,100%{transform:scaleX(1)}50%{transform:scaleX(-1)}}
+@media (prefers-reduced-motion:reduce){
+  .hob{height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hob-item{position:relative;inset:auto;opacity:1;animation:none;padding:24px 0}
+  .hob-ic{width:88px;height:88px}
+  .hob .hob-ic,.hob .hob-item *{animation:none!important;transform:none!important}
+}
+
+/* Contact (inverse) */
+.ab-contact{position:relative;overflow:hidden;background:var(--color-bg-inverse);color:var(--color-text-inverse);--arc-color:var(--color-accent-on-inverse)}
+.ab-contact-in{padding-top:112px;padding-bottom:112px;display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.ab-contact h2{margin:0;max-width:620px}
+.ab-contact .ab-mail{color:var(--color-accent-on-inverse);text-decoration:none;font-weight:600}
+.ab-contact .ab-mail:hover{color:var(--color-text-inverse)}
+.ab-contact .mlabel{color:var(--color-text-inverse-secondary)}

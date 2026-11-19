@@ -21,6 +21,10 @@ PAGES = [
          description='Sina Zibakerdar is a human-centred product designer who designs learning platforms, collaboration tools and AI-powered workflows. Case studies, CV and contact.',
          og='/assets/img/og/home.jpg', css=['home'], js=['/assets/hero-stage/hero-stage.js', '/assets/js/home.js'],
          extra_css=['/assets/hero-stage/hero-stage.css'], nav='home'),
+    dict(src='about.html', out='about/index.html', path='/about/',
+         title='About · Sina Zibakerdar, Product Designer',
+         description='Sina Zibakerdar trained as an architect, studied User Experience Engineering at Goldsmiths in London, and now leads product design at TopTech in Tehran.',
+         og='/assets/img/og/about.jpg', css=['about'], nav='about'),
 ]
 
 FONT_PRELOADS = ['space-grotesk-400', 'space-grotesk-500']
