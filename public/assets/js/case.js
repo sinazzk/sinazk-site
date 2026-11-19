@@ -28,6 +28,7 @@
   (function () {
     var imgs = Array.prototype.slice.call(document.querySelectorAll('main figure img'));
     if (!imgs.length) return;
+    document.documentElement.classList.add('has-lb'); // site.js shows the zoom cursor over these
     var icon = function (d) { return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + d + '"/></svg>'; };
     var lb = document.createElement('div');
     lb.className = 'lb'; lb.hidden = true; lb.tabIndex = -1;

@@ -13,7 +13,7 @@ SRC = os.path.join(ROOT, 'src', 'pages')
 OUT = os.path.join(ROOT, 'public')
 SITE = 'https://sinazk.com'
 CV = 'https://drive.google.com/file/d/1TX_gvWSUKH6xAQ0qkMHym0XR-vtFZKS3/view?usp=sharing'
-VERSION = '20261119g'  # bump to bust caches when CSS/JS change
+VERSION = '20261119h'  # bump to bust caches when CSS/JS change
 
 PAGES = [
     dict(src='index.html', out='index.html', path='/',
@@ -136,13 +136,16 @@ FOOTER = '''<footer class="site-footer">
     </div>
   </div>
 </footer>
-<div class="xhair" aria-hidden="true"><div class="xhair-in">
+<div class="xhair" aria-hidden="true">
+  <span class="xh-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg></span>
+  <div class="xh-rot"><div class="xhair-in">
   <span class="xh" style="left:0;top:10px;width:7px;height:1.5px"></span>
   <span class="xh" style="right:0;top:10px;width:7px;height:1.5px"></span>
   <span class="xh" style="left:10px;top:0;width:1.5px;height:7px"></span>
   <span class="xh" style="left:10px;bottom:0;width:1.5px;height:7px"></span>
   <span class="xh" style="left:9.5px;top:9.5px;width:2.5px;height:2.5px;border-radius:50%;background:var(--color-bg-inverse)"></span>
-</div></div>'''
+</div></div>
+</div>'''
 
 
 CONTACT = '''<!-- CONTACT -->

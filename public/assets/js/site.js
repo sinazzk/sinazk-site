@@ -95,7 +95,8 @@
   (function () {
     var x = document.querySelector('.xhair');
     if (!x || !finePointer) return;
-    var xi = x.querySelector('.xhair-in');
+    var xi = x.querySelector('.xhair-in'), xr = x.querySelector('.xh-rot');
+    document.documentElement.classList.add('xh-on'); // the zoom cursor replaces the system one over images
     var t = { x: -100, y: -100 }, p = { x: -100, y: -100 }, v = { x: 0, y: 0 }, ang = 0, av = 0, seen = false, raf = 0;
     function tick() {
       if (reduce) { p.x = t.x; p.y = t.y; }
@@ -106,7 +107,8 @@
         var target = Math.max(-200, Math.min(200, lagX * 1.5 + lagY * 0.6));
         av = (av + (target - ang) * 0.12) * 0.9; ang += av;
       }
-      x.style.transform = 'translate3d(' + p.x.toFixed(2) + 'px,' + p.y.toFixed(2) + 'px,0) rotate(' + ang.toFixed(2) + 'deg)';
+      x.style.transform = 'translate3d(' + p.x.toFixed(2) + 'px,' + p.y.toFixed(2) + 'px,0)';
+      if (xr) xr.style.transform = 'rotate(' + ang.toFixed(2) + 'deg)'; // the zoom cursor stays upright
       var settled = Math.abs(v.x) + Math.abs(v.y) < 0.02 && Math.abs(t.x - p.x) + Math.abs(t.y - p.y) < 0.3 && Math.abs(av) < 0.02 && Math.abs(ang) < 0.05;
       raf = settled ? 0 : requestAnimationFrame(tick);
     }
@@ -116,6 +118,7 @@
       x.style.opacity = '1';
       var hot = e.target && e.target.closest && e.target.closest('a,button');
       if (xi) xi.classList.toggle('on', !!hot);
+      x.classList.toggle('view', !!(e.target && e.target.closest && e.target.closest('.has-lb main figure img')));
       if (!raf) raf = requestAnimationFrame(tick);
     }, { passive: true });
     document.addEventListener('mouseout', function (e) { if (!e.relatedTarget) x.style.opacity = '0'; });
