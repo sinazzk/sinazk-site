@@ -13,7 +13,7 @@ SRC = os.path.join(ROOT, 'src', 'pages')
 OUT = os.path.join(ROOT, 'public')
 SITE = 'https://sinazk.com'
 CV = 'https://drive.google.com/file/d/1TX_gvWSUKH6xAQ0qkMHym0XR-vtFZKS3/view?usp=sharing'
-VERSION = '20261119b'  # bump to bust caches when CSS/JS change
+VERSION = '20261119c'  # bump to bust caches when CSS/JS change
 
 PAGES = [
     dict(src='index.html', out='index.html', path='/',
@@ -25,27 +25,40 @@ PAGES = [
          title='About · Sina Zibakerdar, Product Designer',
          description='Sina Zibakerdar trained as an architect, studied User Experience Engineering at Goldsmiths in London, and now leads product design at TopTech in Tehran.',
          og='/assets/img/og/about.jpg', css=['about'], nav='about'),
-    dict(src='superreach.html', out='work/superreach/index.html', path='/work/superreach/',
-         title='SuperReach case study · Sina Zibakerdar',
-         description='Designing an AI-coached learning platform for sales and recruitment teams: field research, AI roleplay calls with instant coaching, and a token-based design system.',
-         og='/assets/img/og/superreach.jpg', css=['case'], js=['/assets/js/case.js'], nav='work'),
-    dict(src='office-culture-dj.html', out='work/office-culture-dj/index.html', path='/work/office-culture-dj/',
-         title='Office Culture DJ case study · Sina Zibakerdar',
-         description='Bringing back the hallway chat: a three-month service design study of a remote design studio, and a Slack presence space tested with 8 employees.',
-         og='/assets/img/og/office-culture-dj.jpg', css=['case'], js=['/assets/js/case.js'], nav='work'),
-    dict(src='cryptoland.html', out='work/cryptoland/index.html', path='/work/cryptoland/',
-         title='Cryptoland case study · Sina Zibakerdar',
-         description='Redesigning onboarding, KYC and trading for one of Iran’s most popular cryptocurrency exchanges, across web and mobile.',
-         og='/assets/img/og/cryptoland.jpg', css=['case'], js=['/assets/js/case.js'], nav='work'),
-    dict(src='proda.html', out='work/proda/index.html', path='/work/proda/',
-         title='Proda case study · Sina Zibakerdar',
-         description='An internal app that guides technicians through inspecting and repairing mobile network towers, and gives supervisors what they need to act.',
-         og='/assets/img/og/proda.jpg', css=['case'], js=['/assets/js/case.js'], nav='work'),
-    dict(src='sok-sok.html', out='work/sok-sok/index.html', path='/work/sok-sok/',
-         title='SOK SOK case study · Sina Zibakerdar',
-         description='A location-based messaging app: pin a message to a place, and only your friend standing there can read it. Awarded a development grant.',
-         og='/assets/img/og/sok-sok.jpg', css=['case'], js=['/assets/js/case.js'], nav='work'),
 ]
+
+CASES = {
+    'superreach': dict(name='SuperReach', line='Designing an AI-coached learning platform for sales &amp; recruitment teams', thumb='/assets/img/home/superreach-card-800.webp',
+        title='SuperReach case study · Sina Zibakerdar',
+        description='Designing an AI-coached learning platform for sales and recruitment teams: field research, AI roleplay calls with instant coaching, and a token-based design system.',
+        project='SUPERREACH', client='SuperReach', role='Design lead', year='2024',
+        sheets=['Research', 'Problems', 'AI features', 'Scaling', 'Outcome'], next='office-culture-dj'),
+    'office-culture-dj': dict(name='Office Culture DJ', line='Bringing back the hallway chat for a remote design studio', thumb='/assets/img/home/ocdj-card-800.webp',
+        title='Office Culture DJ case study · Sina Zibakerdar',
+        description='Bringing back the hallway chat: a three-month service design study of a remote design studio, and a Slack presence space tested with 8 employees.',
+        project='OFFICE CULTURE DJ', client='Reason', role='UX research', year='2023',
+        sheets=['Context', 'Research', 'Pain points', 'Connections', 'Design', 'Results'], next='cryptoland'),
+    'cryptoland': dict(name='Cryptoland', line='Onboarding and trading flows for a centralised crypto exchange', thumb='/assets/img/work/1fe9beac-28a0-4d13-9d21-eeb7f2e9de5b-1200.webp',
+        title='Cryptoland case study · Sina Zibakerdar',
+        description='Redesigning onboarding, KYC and trading for one of Iran’s most popular cryptocurrency exchanges, across web and mobile.',
+        project='CRYPTOLAND', client='Dadehpardaz', role='Product design', year='2021',
+        sheets=['Context', 'Research', 'Design', 'Outcome'], next='proda'),
+    'proda': dict(name='Proda', line='Field app for telecom tower inspection and repair', thumb='/assets/img/work/2925ab6f-1660-4211-9ebe-5fa36edb23df-786.webp',
+        title='Proda case study · Sina Zibakerdar',
+        description='An internal app that guides technicians through inspecting and repairing mobile network towers, and gives supervisors what they need to act.',
+        project='PRODA', client='NAK – MCI', role='Product design', year='2020',
+        sheets=['Context', 'Problem', 'Solution', 'Outcome'], next='sok-sok'),
+    'sok-sok': dict(name='SOK SOK', line='Location-based social app, awarded a development grant', thumb='/assets/img/work/projects-soksok-1200.webp',
+        title='SOK SOK case study · Sina Zibakerdar',
+        description='A location-based messaging app: pin a message to a place, and only your friend standing there can read it. Awarded a development grant.',
+        project='SOK SOK', client='T-Lab, TUIC', role='Product design', year='2019',
+        sheets=['Context', 'Problem', 'Solution'], next='superreach'),
+}
+
+for _slug in CASES:
+    PAGES.append(dict(src=_slug + '.html', out='work/%s/index.html' % _slug, path='/work/%s/' % _slug,
+                      title=CASES[_slug]['title'], description=CASES[_slug]['description'],
+                      og='/assets/img/og/%s.jpg' % _slug, css=['case'], js=['/assets/js/case.js'], nav='work', case=_slug))
 
 FONT_PRELOADS = ['space-grotesk-400', 'space-grotesk-500']
 
@@ -122,10 +135,47 @@ FOOTER = '''<footer class="site-footer">
 </div></div>'''
 
 
+CONTACT = '''<!-- CONTACT -->
+<section id="contact" class="contact bp" aria-labelledby="contact-title">
+  <div class="wrap contact-in reveal">
+    <h2 id="contact-title" class="t-h3">Hiring for a product designer, or building something complex? Let’s talk.</h2>
+    <div class="mailwrap">
+      <a href="mailto:hi@sinazk.com" class="mail" aria-label="Email hi@sinazk.com"><span class="ch" aria-hidden="true" style="--i:0">h</span><span class="ch" aria-hidden="true" style="--i:1">i</span><span class="at" aria-hidden="true">@</span><span class="ch" aria-hidden="true" style="--i:3">s</span><span class="ch" aria-hidden="true" style="--i:4">i</span><span class="ch" aria-hidden="true" style="--i:5">n</span><span class="ch" aria-hidden="true" style="--i:6">a</span><span class="ch" aria-hidden="true" style="--i:7">z</span><span class="ch" aria-hidden="true" style="--i:8">k</span><span class="ch" aria-hidden="true" style="--i:9">.</span><span class="ch" aria-hidden="true" style="--i:10">c</span><span class="ch" aria-hidden="true" style="--i:11">o</span><span class="ch" aria-hidden="true" style="--i:12">m</span></a>
+      <canvas class="hline" aria-hidden="true"></canvas>
+    </div>
+    <div class="mlabel" aria-hidden="true" style="top:112px">SHEET {sheet} · CONTACT</div>
+  </div>
+</section>'''
+
+
+def tblock(c):
+    """The drawing title block in the corner of a case study; case.js keeps it in step with the page."""
+    bars = ''.join('<span class="tb-bar%s"></span>' % (' cur' if i == 0 else '') for i in range(len(c['sheets'])))
+    return '''<aside class="tblock" aria-hidden="true">
+  <div class="tb-row"><div class="tb-cell grow"><span class="tb-k">PROJECT</span><span class="tb-v strong">%s</span></div><div class="tb-cell" style="width:64px"><span class="tb-k">SHEET</span><span class="tb-v big"><span data-tb-no>01</span>/%02d</span></div></div>
+  <div class="tb-row"><div class="tb-cell grow"><span class="tb-k">CLIENT</span><span class="tb-v">%s</span></div><div class="tb-cell grow"><span class="tb-k">ROLE</span><span class="tb-v">%s</span></div><div class="tb-cell" style="width:44px"><span class="tb-k">YEAR</span><span class="tb-v">%s</span></div></div>
+  <div class="tb-row"><div class="tb-cell last"><span class="tb-k">NOW VIEWING</span><span class="tb-v accent" data-tb-name>%s</span><div class="tb-bars">%s</div></div></div>
+</aside>''' % (c['project'], len(c['sheets']), c['client'], c['role'], c['year'], c['sheets'][0], bars)
+
+
+def next_band(slug):
+    """The dark band at the end of a case study linking to the next one."""
+    n = CASES[slug]
+    return '''<a href="/work/%s/" class="next">
+  <div class="wrap next-in">
+    <div class="next-copy"><span class="t-cap">NEXT CASE STUDY</span><span class="t-h4">%s <span class="arrow" aria-hidden="true">→</span></span><span class="t-pm">%s</span></div>
+    <img src="%s" width="800" height="450" alt="" loading="lazy" decoding="async">
+  </div>
+</a>''' % (slug, n['name'], n['line'], n['thumb'])
+
+
 def build():
     for p in PAGES:
         body = open(os.path.join(SRC, p['src']), encoding='utf-8').read().strip('\n')
-        body = body.replace('{{CV}}', CV)
+        body = re.sub(r'\{\{CONTACT (\d\d)\}\}', lambda m: CONTACT.replace('{sheet}', m.group(1)), body).replace('{{CV}}', CV)
+        if p.get('case'):
+            c = CASES[p['case']]
+            body += '\n' + next_band(c['next']) + '\n' + tblock(c)
         doc = '\n'.join([head(p), '<body>', header(p), '<main id="main" tabindex="-1">', body, '</main>', FOOTER, '</body>', '</html>', ''])
         out = os.path.join(OUT, p['out'])
         os.makedirs(os.path.dirname(out), exist_ok=True)

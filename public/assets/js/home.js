@@ -67,20 +67,4 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setup(); draw(performance.now()); });
   })();
 
-  /* ── Contact: the email address leans gently toward the cursor ── */
-  (function () {
-    var sec = document.querySelector('.contact');
-    var wrap = sec && sec.querySelector('.mailwrap');
-    if (!wrap || reduce) return;
-    var raf = 0, tx = 0, ty = 0;
-    function apply() { raf = 0; wrap.style.transform = 'translate(' + tx + 'px,' + ty + 'px)'; }
-    sec.addEventListener('mousemove', function (e) {
-      var r = wrap.getBoundingClientRect();
-      var dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
-      var k = Math.max(0, 1 - Math.hypot(dx / Math.max(r.width, 400), dy / 260));
-      tx = Math.round(dx * 0.05 * k); ty = Math.round(dy * 0.12 * k);
-      if (!raf) raf = requestAnimationFrame(apply);
-    });
-    sec.addEventListener('mouseleave', function () { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(apply); });
-  })();
 })();

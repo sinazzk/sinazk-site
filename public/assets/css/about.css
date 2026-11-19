@@ -83,11 +83,3 @@
   .hob-ic{width:88px;height:88px}
   .hob .hob-ic,.hob .hob-item *{animation:none!important;transform:none!important}
 }
-
-/* Contact (inverse) */
-.ab-contact{position:relative;overflow:hidden;background:var(--color-bg-inverse);color:var(--color-text-inverse);--arc-color:var(--color-accent-on-inverse)}
-.ab-contact-in{padding-top:112px;padding-bottom:112px;display:flex;flex-direction:column;gap:24px;align-items:flex-start}
-.ab-contact h2{margin:0;max-width:620px}
-.ab-contact .ab-mail{color:var(--color-accent-on-inverse);text-decoration:none;font-weight:600}
-.ab-contact .ab-mail:hover{color:var(--color-text-inverse)}
-.ab-contact .mlabel{color:var(--color-text-inverse-secondary)}

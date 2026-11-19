@@ -21,10 +21,10 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/space-grotesk-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/space-grotesk-500.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css?v=20261119b">
-<link rel="stylesheet" href="/assets/css/case.css?v=20261119b">
-<script src="/assets/js/site.js?v=20261119b" defer></script>
-<script src="/assets/js/case.js?v=20261119b" defer></script>
+<link rel="stylesheet" href="/assets/css/site.css?v=20261119c">
+<link rel="stylesheet" href="/assets/css/case.css?v=20261119c">
+<script src="/assets/js/site.js?v=20261119c" defer></script>
+<script src="/assets/js/case.js?v=20261119c" defer></script>
 </head>
 <body>
 <a class="skip t-pm" href="#main">Skip to content</a>
@@ -40,148 +40,120 @@
   </nav>
 </header>
 <main id="main" tabindex="-1">
-  <!-- TITLE -->
-  <section class="cs-title bp spot">
-    <div class="spot-glow" aria-hidden="true"></div>
-    <div class="gridlit" aria-hidden="true"></div>
-    <div class="wrap cs-title-in enter">
-      <a class="t-pm" href="/#work" style="text-decoration:none;font-weight:500">← All work</a>
-      <div class="t-cap" style="color:var(--color-text-tertiary)">CASE STUDY 03 · 2021 · FINTECH</div>
-      <h1 class="t-h1" style="margin:0">Cryptoland</h1>
-      <p class="t-pl" style="margin:0;color:var(--color-text-secondary);max-width:820px">Redesigning onboarding, KYC and trading for one of Iran’s most popular cryptocurrency exchanges, across web and mobile, in two currencies.</p>
-    </div>
-  </section>
-
-  <!-- HERO IMAGE -->
-  <div style="max-width:1200px;margin:0 auto;padding:48px 32px 0">
-    <div style="border-radius:20px;overflow:hidden;background:#F2E7CC">
-      <img fetchpriority="high" width="1200" height="800" decoding="async" class="hero-cover" src="/assets/img/work/1fe9beac-28a0-4d13-9d21-eeb7f2e9de5b-1200.webp" alt="Cryptoland trading dashboard on a laptop and phone" style="width:100%;height:460px;object-fit:cover;display:block">
-    </div>
+<!-- TITLE -->
+<section class="cs-title bp spot">
+<div aria-hidden="true" class="spot-glow"></div>
+<div aria-hidden="true" class="gridlit"></div>
+<div class="wrap cs-title-in enter">
+<a class="t-pm cs-back" href="/#work">← All work</a>
+<div class="t-cap">CASE STUDY 03 · 2021 · FINTECH</div>
+<h1 class="t-h1">Cryptoland</h1>
+<p class="t-pl">Redesigning onboarding, KYC and trading for one of Iran’s most popular cryptocurrency exchanges, across web and mobile, in two currencies.</p>
+</div>
+</section>
+<!-- HERO IMAGE -->
+<div class="wrap cs-cover">
+<div class="cs-cover-frame" style="background:#F2E7CC">
+<img alt="Cryptoland trading dashboard on a laptop and phone" class="hero-cover" decoding="async" fetchpriority="high" height="800" src="/assets/img/work/1fe9beac-28a0-4d13-9d21-eeb7f2e9de5b-1200.webp" width="1200"/>
+</div>
+</div>
+<!-- FACTS + AT A GLANCE -->
+<section class="wrap cs-intro">
+<dl class="cs-facts">
+<canvas aria-hidden="true" class="hline"></canvas>
+<dt class="t-cap">ROLE</dt>
+<dd class="t-pm">Product designer</dd>
+<dt class="t-cap">CLIENT</dt>
+<dd class="t-pm">Dadehpardaz</dd>
+<dt class="t-cap">TIMELINE</dt>
+<dd class="t-pm">6 months, 2021</dd>
+<dt class="t-cap">PLATFORMS</dt>
+<dd class="t-pm">Web app · iOS &amp; Android</dd>
+</dl>
+<div class="cs-glance">
+<div class="t-cap">AT A GLANCE</div>
+<p class="t-pl"><strong>Problem.</strong> Stakeholder and developer interviews revealed severe problems in onboarding, buying and selling, on a platform that mixed Iranian rials and dollars.</p>
+<p class="t-pl"><strong>What I did.</strong> Built three trader personas, mapped the onboarding journey, re-ordered the information architecture through card sorting, and redesigned the core flows for web and mobile.</p>
+<p class="t-pl"><strong>Outcome.</strong> Onboarding and referrals both improved after launch, compared with before the redesign.</p>
+</div>
+</section>
+<section class="wrap cs-stats-sec">
+<div class="cs-stats">
+<div class="cs-stat">
+<span class="t-h3">+30%</span>
+<span class="t-ps">onboarding improvement</span>
+</div>
+<div class="cs-stat">
+<span class="t-h3">+24%</span>
+<span class="t-ps">referrals</span>
+</div>
+<div class="cs-stat">
+<span class="t-h3">3</span>
+<span class="t-ps">trader personas guiding the redesign</span>
+</div>
+</div>
+</section>
+<!-- CONTEXT -->
+<section class="wrap cs-sec" data-sheet="Context" id="context">
+<div aria-hidden="true" class="mlabel">DETAIL 01 · CONTEXT<span>·</span>SHEET 01/04</div><canvas aria-hidden="true" class="hline"></canvas>
+<div class="split">
+<div class="cs-col">
+<h2 class="t-h4">A fast-growing exchange with a painful first step</h2>
+<p class="t-pl">In 2020 Cryptoland was one of the most popular cryptocurrency platforms in Iran. Users deposited rials to buy tokens on the website, with a mobile app for frequent traders who wanted to buy and sell quickly from anywhere.</p>
+<div class="cs-specs"><dl class="spec"><dt>MARKET</dt><dd>Iran: rial deposits, crypto trading</dd><dt>USERS</dt><dd>First-time buyers to frequent traders</dd></dl></div>
+</div>
+<div class="stick"><figure><img alt="Cryptoland homepage on a laptop" class="cs-img" decoding="async" height="821" loading="lazy" sizes="(max-width: 960px) 100vw, 460px" src="/assets/img/work/a7e98f11-2c6c-481e-84a3-3e59351f682b-1200.webp" srcset="/assets/img/work/a7e98f11-2c6c-481e-84a3-3e59351f682b-1200.webp 1200w, /assets/img/work/a7e98f11-2c6c-481e-84a3-3e59351f682b-1342.webp 1342w" width="1342"/><figcaption class="t-ps">Homepage</figcaption></figure></div>
+</div>
+</section>
+<!-- RESEARCH -->
+<section class="wrap cs-sec" data-sheet="Research" id="research">
+<div aria-hidden="true" class="mlabel">DETAIL 02 · RESEARCH<span>·</span>SHEET 02/04</div><canvas aria-hidden="true" class="hline"></canvas>
+<div class="split">
+<div class="cs-col">
+<h2 class="t-h4">Three kinds of trader, one confusing journey</h2>
+<p class="t-pl">From user data and extensive interviews I created three personas with different trading experience and strategies. Journey mapping exposed the pain points and set priorities; card sorting reshaped the site’s architecture, and other exchanges showed how similar problems had been solved.</p>
+<div class="cs-specs"><dl class="spec"><dt>METHODS</dt><dd>Interviews · personas · journey mapping · card sorting · competitor analysis</dd><dt>PRIORITY</dt><dd>Onboarding, KYC, buy &amp; sell</dd></dl></div>
+</div>
+<div class="stick"><div class="cs-notes"><div class="cs-note"><div class="t-cap">PERSONA 01</div><div class="t-pm">First-time buyer. Needs to trust the platform before depositing.</div></div><div class="cs-note"><div class="t-cap">PERSONA 02</div><div class="t-pm">Occasional investor. Wants clarity on fees and currencies.</div></div><div class="cs-note"><div class="t-cap">PERSONA 03</div><div class="t-pm">Frequent trader. Wants speed on mobile.</div></div></div></div>
+</div>
+</section>
+<div class="wrap cs-wide"><figure><div class="anno-wrap"><img alt="Onboarding user journey with emotions and opportunities" class="cs-img" decoding="async" height="1559" loading="lazy" sizes="(max-width: 960px) 100vw, 1136px" src="/assets/img/work/69c45109-5de7-435c-8ec2-a89d10f8c63f-1200.webp" srcset="/assets/img/work/69c45109-5de7-435c-8ec2-a89d10f8c63f-1200.webp 1200w, /assets/img/work/69c45109-5de7-435c-8ec2-a89d10f8c63f-2000.webp 2000w, /assets/img/work/69c45109-5de7-435c-8ec2-a89d10f8c63f-2400.webp 2400w" width="2400"/></div><figcaption class="t-ps">Onboarding journey of a first-time buyer</figcaption></figure></div>
+<!-- DESIGN -->
+<section class="wrap cs-sec" data-sheet="Design" id="design">
+<div aria-hidden="true" class="mlabel">DETAIL 03 · DESIGN<span>·</span>SHEET 03/04</div><canvas aria-hidden="true" class="hline"></canvas>
+<div class="split">
+<div class="cs-col">
+<h2 class="t-h4">Designing for two currencies at once</h2>
+<p class="t-pl">Everything from onboarding and KYC to deposits, withdrawals, buying and selling had to be designed meticulously, and the double-currency nature of the platform (IRR and USD) had to make sense at every step.</p>
+<div class="cs-specs"><dl class="spec"><dt>FLOWS</dt><dd>Onboarding · KYC · deposit · withdraw · buy · sell</dd><dt>CURRENCIES</dt><dd>IRR and USD side by side</dd></dl></div>
+</div>
+<div class="stick"><figure><img alt="Grid of mobile trading screens in dark mode" class="cs-img" decoding="async" height="1800" loading="lazy" sizes="(max-width: 960px) 100vw, 460px" src="/assets/img/work/b4c5f5b7-6bb0-40e7-b377-fc96860ee97b-1-min-1200.webp" srcset="/assets/img/work/b4c5f5b7-6bb0-40e7-b377-fc96860ee97b-1-min-1200.webp 1200w, /assets/img/work/b4c5f5b7-6bb0-40e7-b377-fc96860ee97b-1-min-2000.webp 2000w, /assets/img/work/b4c5f5b7-6bb0-40e7-b377-fc96860ee97b-1-min-2400.webp 2400w" width="2400"/><figcaption class="t-ps">Mobile, dark theme</figcaption></figure></div>
+</div>
+</section>
+<div class="wrap cs-wide"><div class="cs-pair"><figure><img alt="Grid of desktop trading screens" class="cs-img" decoding="async" height="1800" loading="lazy" sizes="(max-width: 960px) 100vw, 560px" src="/assets/img/work/4d583c21-be5f-47f5-8259-427981588325-min-1200.webp" srcset="/assets/img/work/4d583c21-be5f-47f5-8259-427981588325-min-1200.webp 1200w, /assets/img/work/4d583c21-be5f-47f5-8259-427981588325-min-2000.webp 2000w, /assets/img/work/4d583c21-be5f-47f5-8259-427981588325-min-2400.webp 2400w" width="2400"/><figcaption class="t-ps">Desktop views</figcaption></figure><figure><img alt="Mobile screens for wallet and trading flows" class="cs-img" decoding="async" height="1316" loading="lazy" sizes="(max-width: 960px) 100vw, 1136px" src="/assets/img/work/bf3fa67a-b2d3-4411-bc2d-1a24dbd1324d-min-1200.webp" srcset="/assets/img/work/bf3fa67a-b2d3-4411-bc2d-1a24dbd1324d-min-1200.webp 1200w, /assets/img/work/bf3fa67a-b2d3-4411-bc2d-1a24dbd1324d-min-2000.webp 2000w, /assets/img/work/bf3fa67a-b2d3-4411-bc2d-1a24dbd1324d-min-2400.webp 2400w" width="2400"/><figcaption class="t-ps">Mobile flows</figcaption></figure></div></div>
+<!-- OUTCOME &amp; REFLECTION -->
+<section class="wrap cs-sec" data-sheet="Outcome" id="reflection">
+<div aria-hidden="true" class="mlabel">DETAIL 04 · OUTCOME &amp; REFLECTION<span>·</span>SHEET 04/04</div><canvas aria-hidden="true" class="hline"></canvas>
+<div class="split">
+<div class="cs-col">
+<h2 class="t-h4">What shipped, and what I learned</h2>
+<p class="t-pl">The redesigned UI and core flows shipped on web and mobile, and onboarding rose 30% and referrals 24% compared with the old product.</p><p class="t-pl">The bigger lesson was about trust. People come to a crypto exchange worried about losing real money, and good design starts by taking those worries seriously.</p>
+<div class="cs-specs"></div>
+</div>
+<div class="stick"><div class="cs-notes"><div class="cs-note"><div class="t-cap">RESULT</div><div class="t-pm">+30% onboarding · +24% referrals, vs. before the redesign</div></div></div></div>
+</div>
+</section>
+<a href="/work/proda/" class="next">
+  <div class="wrap next-in">
+    <div class="next-copy"><span class="t-cap">NEXT CASE STUDY</span><span class="t-h4">Proda <span class="arrow" aria-hidden="true">→</span></span><span class="t-pm">Field app for telecom tower inspection and repair</span></div>
+    <img src="/assets/img/work/2925ab6f-1660-4211-9ebe-5fa36edb23df-786.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
   </div>
-
-  <!-- FACTS + AT A GLANCE -->
-  <section style="max-width:1200px;margin:0 auto;padding:56px 32px;display:flex;flex-wrap:wrap;gap:48px">
-    <dl style="margin:0;flex:1 1 360px;display:grid;grid-template-columns:120px minmax(0,1fr)">
-      <canvas class="hline" aria-hidden="true" style="grid-column:1/-1;margin:-12px 0 -12px"></canvas>
-      <dt class="t-cap" style="padding:14px 0;border-bottom:1px solid var(--color-border);color:var(--color-text-tertiary)">ROLE</dt>
-      <dd class="t-pm" style="margin:0;padding:14px 0;border-bottom:1px solid var(--color-border)">Product designer</dd>
-      <dt class="t-cap" style="padding:14px 0;border-bottom:1px solid var(--color-border);color:var(--color-text-tertiary)">CLIENT</dt>
-      <dd class="t-pm" style="margin:0;padding:14px 0;border-bottom:1px solid var(--color-border)">Dadehpardaz</dd>
-      <dt class="t-cap" style="padding:14px 0;border-bottom:1px solid var(--color-border);color:var(--color-text-tertiary)">TIMELINE</dt>
-      <dd class="t-pm" style="margin:0;padding:14px 0;border-bottom:1px solid var(--color-border)">6 months, 2021</dd>
-      <dt class="t-cap" style="padding:14px 0;border-bottom:1px solid var(--color-border);color:var(--color-text-tertiary)">PLATFORMS</dt>
-      <dd class="t-pm" style="margin:0;padding:14px 0;border-bottom:1px solid var(--color-border)">Web app · iOS &amp; Android</dd>
-    </dl>
-    <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:20px">
-      <div class="t-cap" style="color:var(--color-text-tertiary)">AT A GLANCE</div>
-      <p class="t-pl" style="margin:0"><strong style="font-weight:600">Problem.</strong> Stakeholder and developer interviews revealed severe problems in onboarding, buying and selling, on a platform that mixed Iranian rials and dollars.</p>
-      <p class="t-pl" style="margin:0"><strong style="font-weight:600">What I did.</strong> Built three trader personas, mapped the onboarding journey, re-ordered the information architecture through card sorting, and redesigned the core flows for web and mobile.</p>
-      <p class="t-pl" style="margin:0"><strong style="font-weight:600">Outcome.</strong> Onboarding and referrals both improved after launch, compared with before the redesign.</p>
-    </div>
-  </section>
-
-  <section style="max-width:1200px;margin:0 auto;padding:0 32px 40px">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
-      <div style="border:1px solid var(--color-border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:6px;background:var(--color-bg-surface)">
-        <span class="t-h3" style="font-weight:600;color:var(--color-accent-text)">+30%</span>
-        <span class="t-ps" style="color:var(--color-text-tertiary)">onboarding improvement</span>
-      </div>
-      <div style="border:1px solid var(--color-border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:6px;background:var(--color-bg-surface)">
-        <span class="t-h3" style="font-weight:600;color:var(--color-accent-text)">+24%</span>
-        <span class="t-ps" style="color:var(--color-text-tertiary)">referrals</span>
-      </div>
-      <div style="border:1px solid var(--color-border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:6px;background:var(--color-bg-surface)">
-        <span class="t-h3" style="font-weight:600;color:var(--color-accent-text)">3</span>
-        <span class="t-ps" style="color:var(--color-text-tertiary)">trader personas guiding the redesign</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTEXT -->
-  <section id="context" data-sheet="Context" style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 32px;box-sizing:border-box">
-    <div class="mlabel" aria-hidden="true" style="top:92px;color:var(--color-text-tertiary)">DETAIL 01 · CONTEXT<span style="opacity:.6">·</span>SHEET 01/04</div><canvas class="hline" aria-hidden="true" style="margin:-2px 0 18px"></canvas>
-    <div class="split">
-      <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
-        <h2 class="t-h4" style="margin:0">A fast-growing exchange with a painful first step</h2>
-        <p class="t-pl" style="margin:0;color:var(--color-text-secondary)">In 2020 Cryptoland was one of the most popular cryptocurrency platforms in Iran. Users deposited rials to buy tokens on the website, with a mobile app for frequent traders who wanted to buy and sell quickly from anywhere.</p>
-        <div style="margin-top:8px"><dl class="spec"><dt>MARKET</dt><dd>Iran: rial deposits, crypto trading</dd><dt>USERS</dt><dd>First-time buyers to frequent traders</dd></dl></div>
-      </div>
-      <div class="stick" style="min-width:0"><figure style="margin:0"><img width="1342" height="821" loading="lazy" decoding="async" src="/assets/img/work/a7e98f11-2c6c-481e-84a3-3e59351f682b-1200.webp" srcset="/assets/img/work/a7e98f11-2c6c-481e-84a3-3e59351f682b-1200.webp 1200w, /assets/img/work/a7e98f11-2c6c-481e-84a3-3e59351f682b-1342.webp 1342w" sizes="(max-width: 960px) 100vw, 460px" alt="Cryptoland homepage on a laptop" style="width:100%;display:block;border-radius:16px"><figcaption class="t-ps" style="margin-top:10px;color:var(--color-text-tertiary)">Homepage</figcaption></figure></div>
-    </div>
-  </section>
-
-  <!-- RESEARCH -->
-  <section id="research" data-sheet="Research" style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 32px;box-sizing:border-box">
-    <div class="mlabel" aria-hidden="true" style="top:92px;color:var(--color-text-tertiary)">DETAIL 02 · RESEARCH<span style="opacity:.6">·</span>SHEET 02/04</div><canvas class="hline" aria-hidden="true" style="margin:-2px 0 18px"></canvas>
-    <div class="split">
-      <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
-        <h2 class="t-h4" style="margin:0">Three kinds of trader, one confusing journey</h2>
-        <p class="t-pl" style="margin:0;color:var(--color-text-secondary)">From user data and extensive interviews I created three personas with different trading experience and strategies. Journey mapping exposed the pain points and set priorities; card sorting reshaped the site’s architecture, and other exchanges showed how similar problems had been solved.</p>
-        <div style="margin-top:8px"><dl class="spec"><dt>METHODS</dt><dd>Interviews · personas · journey mapping · card sorting · competitor analysis</dd><dt>PRIORITY</dt><dd>Onboarding, KYC, buy &amp; sell</dd></dl></div>
-      </div>
-      <div class="stick" style="min-width:0"><div style="display:flex;flex-direction:column;gap:12px"><div style="border:1px solid var(--color-border);background:var(--color-bg-surface);border-radius:14px;padding:18px 20px"><div class="t-cap" style="color:var(--color-accent-text);margin-bottom:6px">PERSONA 01</div><div class="t-pm">First-time buyer. Needs to trust the platform before depositing.</div></div><div style="border:1px solid var(--color-border);background:var(--color-bg-surface);border-radius:14px;padding:18px 20px"><div class="t-cap" style="color:var(--color-accent-text);margin-bottom:6px">PERSONA 02</div><div class="t-pm">Occasional investor. Wants clarity on fees and currencies.</div></div><div style="border:1px solid var(--color-border);background:var(--color-bg-surface);border-radius:14px;padding:18px 20px"><div class="t-cap" style="color:var(--color-accent-text);margin-bottom:6px">PERSONA 03</div><div class="t-pm">Frequent trader. Wants speed on mobile.</div></div></div></div>
-    </div>
-  </section>
-  <div style="max-width:1200px;margin:0 auto;padding:16px 32px 24px;box-sizing:border-box"><figure style="margin:0"><div class="anno-wrap"><img width="2400" height="1559" loading="lazy" decoding="async" src="/assets/img/work/69c45109-5de7-435c-8ec2-a89d10f8c63f-1200.webp" srcset="/assets/img/work/69c45109-5de7-435c-8ec2-a89d10f8c63f-1200.webp 1200w, /assets/img/work/69c45109-5de7-435c-8ec2-a89d10f8c63f-2000.webp 2000w, /assets/img/work/69c45109-5de7-435c-8ec2-a89d10f8c63f-2400.webp 2400w" sizes="(max-width: 960px) 100vw, 1136px" alt="Onboarding user journey with emotions and opportunities" style="width:100%;display:block;border-radius:16px"></div><figcaption class="t-ps" style="margin-top:10px;color:var(--color-text-tertiary)">Onboarding journey of a first-time buyer</figcaption></figure></div>
-
-  <!-- DESIGN -->
-  <section id="design" data-sheet="Design" style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 32px;box-sizing:border-box">
-    <div class="mlabel" aria-hidden="true" style="top:92px;color:var(--color-text-tertiary)">DETAIL 03 · DESIGN<span style="opacity:.6">·</span>SHEET 03/04</div><canvas class="hline" aria-hidden="true" style="margin:-2px 0 18px"></canvas>
-    <div class="split">
-      <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
-        <h2 class="t-h4" style="margin:0">Designing for two currencies at once</h2>
-        <p class="t-pl" style="margin:0;color:var(--color-text-secondary)">Everything from onboarding and KYC to deposits, withdrawals, buying and selling had to be designed meticulously, and the double-currency nature of the platform (IRR and USD) had to make sense at every step.</p>
-        <div style="margin-top:8px"><dl class="spec"><dt>FLOWS</dt><dd>Onboarding · KYC · deposit · withdraw · buy · sell</dd><dt>CURRENCIES</dt><dd>IRR and USD side by side</dd></dl></div>
-      </div>
-      <div class="stick" style="min-width:0"><figure style="margin:0"><img width="2400" height="1800" loading="lazy" decoding="async" src="/assets/img/work/b4c5f5b7-6bb0-40e7-b377-fc96860ee97b-1-min-1200.webp" srcset="/assets/img/work/b4c5f5b7-6bb0-40e7-b377-fc96860ee97b-1-min-1200.webp 1200w, /assets/img/work/b4c5f5b7-6bb0-40e7-b377-fc96860ee97b-1-min-2000.webp 2000w, /assets/img/work/b4c5f5b7-6bb0-40e7-b377-fc96860ee97b-1-min-2400.webp 2400w" sizes="(max-width: 960px) 100vw, 460px" alt="Grid of mobile trading screens in dark mode" style="width:100%;display:block;border-radius:16px"><figcaption class="t-ps" style="margin-top:10px;color:var(--color-text-tertiary)">Mobile, dark theme</figcaption></figure></div>
-    </div>
-  </section>
-  <div style="max-width:1200px;margin:0 auto;padding:16px 32px 24px;box-sizing:border-box"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px;align-items:start"><figure style="margin:0"><img width="2400" height="1800" loading="lazy" decoding="async" src="/assets/img/work/4d583c21-be5f-47f5-8259-427981588325-min-1200.webp" srcset="/assets/img/work/4d583c21-be5f-47f5-8259-427981588325-min-1200.webp 1200w, /assets/img/work/4d583c21-be5f-47f5-8259-427981588325-min-2000.webp 2000w, /assets/img/work/4d583c21-be5f-47f5-8259-427981588325-min-2400.webp 2400w" sizes="(max-width: 960px) 100vw, 560px" alt="Grid of desktop trading screens" style="width:100%;display:block;border-radius:16px"><figcaption class="t-ps" style="margin-top:10px;color:var(--color-text-tertiary)">Desktop views</figcaption></figure><figure style="margin:0"><img width="2400" height="1316" loading="lazy" decoding="async" src="/assets/img/work/bf3fa67a-b2d3-4411-bc2d-1a24dbd1324d-min-1200.webp" srcset="/assets/img/work/bf3fa67a-b2d3-4411-bc2d-1a24dbd1324d-min-1200.webp 1200w, /assets/img/work/bf3fa67a-b2d3-4411-bc2d-1a24dbd1324d-min-2000.webp 2000w, /assets/img/work/bf3fa67a-b2d3-4411-bc2d-1a24dbd1324d-min-2400.webp 2400w" sizes="(max-width: 960px) 100vw, 1136px" alt="Mobile screens for wallet and trading flows" style="width:100%;display:block;border-radius:16px"><figcaption class="t-ps" style="margin-top:10px;color:var(--color-text-tertiary)">Mobile flows</figcaption></figure></div></div>
-
-  <!-- OUTCOME &amp; REFLECTION -->
-  <section id="reflection" data-sheet="Outcome" style="position:relative;max-width:1200px;margin:0 auto;padding:64px 32px 32px;box-sizing:border-box">
-    <div class="mlabel" aria-hidden="true" style="top:92px;color:var(--color-text-tertiary)">DETAIL 04 · OUTCOME &amp; REFLECTION<span style="opacity:.6">·</span>SHEET 04/04</div><canvas class="hline" aria-hidden="true" style="margin:-2px 0 18px"></canvas>
-    <div class="split">
-      <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
-        <h2 class="t-h4" style="margin:0">What shipped, and what I learned</h2>
-        <p class="t-pl" style="margin:0;color:var(--color-text-secondary)">The redesigned UI and core flows shipped on web and mobile, and onboarding rose 30% and referrals 24% compared with the old product.</p><p class="t-pl" style="margin:0;color:var(--color-text-secondary)">The bigger lesson was about trust. People come to a crypto exchange worried about losing real money, and good design starts by taking those worries seriously.</p>
-        <div style="margin-top:8px"></div>
-      </div>
-      <div class="stick" style="min-width:0"><div style="display:flex;flex-direction:column;gap:12px"><div style="border:1px solid var(--color-border);background:var(--color-bg-surface);border-radius:14px;padding:18px 20px"><div class="t-cap" style="color:var(--color-accent-text);margin-bottom:6px">RESULT</div><div class="t-pm">+30% onboarding · +24% referrals, vs. before the redesign</div></div></div></div>
-    </div>
-  </section>
-
-  <!-- NEXT PROJECT -->
-  <a href="/work/proda/" class="next" style="display:block;background:var(--color-bg-inverse);color:var(--color-text-inverse);text-decoration:none;margin-top:72px">
-    <div style="max-width:1200px;margin:0 auto;padding:56px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <span class="t-cap" style="color:var(--color-text-inverse-secondary)">NEXT CASE STUDY</span>
-        <span class="t-h4">Proda <span class="arrow">→</span></span>
-        <span class="t-pm" style="color:var(--color-text-inverse-secondary)">Field app for telecom tower inspection and repair</span>
-      </div>
-      <img width="786" height="545" loading="lazy" decoding="async" src="/assets/img/work/2925ab6f-1660-4211-9ebe-5fa36edb23df-786.webp" alt="" style="width:300px;max-width:100%;border-radius:14px">
-    </div>
-  </a>
-
-  <!-- DRAWING TITLE BLOCK -->
-  <aside class="tblock" aria-hidden="true">
-    <div class="tb-row">
-      <div class="tb-cell" style="flex:1;border-right:1px solid var(--color-border)"><span class="tb-k">PROJECT</span><span class="tb-v" style="font-size:12px;font-weight:500">CRYPTOLAND</span></div>
-      <div class="tb-cell" style="width:64px"><span class="tb-k">SHEET</span><span class="tb-v" style="font-size:13px"><span data-tb-no>01</span>/04</span></div>
-    </div>
-    <div class="tb-row">
-      <div class="tb-cell" style="flex:1;border-right:1px solid var(--color-border)"><span class="tb-k">CLIENT</span><span class="tb-v">Dadehpardaz</span></div>
-      <div class="tb-cell" style="flex:1;border-right:1px solid var(--color-border)"><span class="tb-k">ROLE</span><span class="tb-v">Product design</span></div>
-      <div class="tb-cell" style="width:44px"><span class="tb-k">YEAR</span><span class="tb-v">2021</span></div>
-    </div>
-    <div class="tb-row">
-      <div class="tb-cell" style="flex:1;gap:6px"><span class="tb-k">NOW VIEWING</span><span class="tb-v" style="color:var(--color-accent-text)" data-tb-name>Context</span>
-        <div style="display:flex;gap:3px"><span class="tb-bar cur"></span><span class="tb-bar"></span><span class="tb-bar"></span><span class="tb-bar"></span></div>
-      </div>
-    </div>
-  </aside>
-
-  
+</a>
+<aside class="tblock" aria-hidden="true">
+  <div class="tb-row"><div class="tb-cell grow"><span class="tb-k">PROJECT</span><span class="tb-v strong">CRYPTOLAND</span></div><div class="tb-cell" style="width:64px"><span class="tb-k">SHEET</span><span class="tb-v big"><span data-tb-no>01</span>/04</span></div></div>
+  <div class="tb-row"><div class="tb-cell grow"><span class="tb-k">CLIENT</span><span class="tb-v">Dadehpardaz</span></div><div class="tb-cell grow"><span class="tb-k">ROLE</span><span class="tb-v">Product design</span></div><div class="tb-cell" style="width:44px"><span class="tb-k">YEAR</span><span class="tb-v">2021</span></div></div>
+  <div class="tb-row"><div class="tb-cell last"><span class="tb-k">NOW VIEWING</span><span class="tb-v accent" data-tb-name>Context</span><div class="tb-bars"><span class="tb-bar cur"></span><span class="tb-bar"></span><span class="tb-bar"></span><span class="tb-bar"></span></div></div></div>
+</aside>
 </main>
 <footer class="site-footer">
   <div class="site-footer-in t-ps">

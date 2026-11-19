@@ -41,7 +41,7 @@
 html{-webkit-text-size-adjust:100%;scroll-padding-top:88px}
 body{margin:0;background:var(--color-bg-page);color:var(--color-text-primary);font-family:var(--font-sans);font-size:16px;line-height:24px;min-height:100vh;-webkit-font-smoothing:antialiased}
 img{max-width:100%}
-img[width][height]{height:auto}
+:where(img[width][height]){height:auto}
 ::selection{background:var(--color-accent-subtle);color:var(--color-text-primary)}
 :focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
 a{color:var(--color-accent-text)}
@@ -119,6 +119,7 @@ p,dd,li,figcaption{text-wrap:pretty}
 
 /* ── Sheet margin labels: sheet numbers run up the drawing margin ── */
 .mlabel{position:absolute;left:6px;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--font-mono);font-size:11px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;pointer-events:none;display:flex;align-items:center;gap:10px;color:var(--color-text-tertiary)}
+.mlabel span{opacity:.6}
 .mlabel::before{content:'';width:1px;height:28px;background:currentColor;opacity:.45;flex:none}
 @media (min-width:1360px){.mlabel{left:-44px}}
 @media (max-width:760px){.mlabel{display:none}}
@@ -126,8 +127,28 @@ p,dd,li,figcaption{text-wrap:pretty}
 /* ── Hatch divider (canvas drawn by site.js) ── */
 canvas.hline{display:block;width:100%;height:24px;pointer-events:none}
 
+/* ── Reset: components set their own spacing ── */
+h1,h2,h3,h4,h5,h6,p,figure,blockquote,dl,dd{margin:0}
+
 /* ── Layout ── */
 .wrap{position:relative;max-width:1200px;margin:0 auto;padding-left:32px;padding-right:32px}
+
+/* ── Contact ── */
+.contact-in{padding-top:112px;padding-bottom:112px;display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.contact-in h2{margin:0;max-width:760px}
+.mailwrap{display:inline-flex;flex-direction:column;align-items:stretch;max-width:100%;transition:transform .6s var(--ease-out)}
+.mail{display:inline-block;white-space:nowrap;font-size:clamp(40px,8vw,104px);font-weight:600;letter-spacing:-.03em;color:var(--color-accent-text);text-decoration:none;line-height:1.1}
+.mail .ch{display:inline-block;transition:color .45s ease;transition-delay:calc(var(--i) * 18ms)}
+.mail .at{display:inline-block;color:var(--color-accent-display);transition:color .45s ease}
+.mail:focus-visible{outline:2px solid var(--color-accent);outline-offset:8px;border-radius:8px}
+.mailwrap canvas.hline{height:28px;margin-top:-4px}
+@media (hover:hover) and (pointer:fine){
+  .mail:hover .ch,.mail:focus-visible .ch{color:var(--color-text-primary);animation:mailwave .7s var(--ease-out) both;animation-delay:calc(var(--i) * 28ms)}
+  .mail:hover .at,.mail:focus-visible .at{animation:mailspin .9s cubic-bezier(.3,.9,.3,1) both;animation-delay:80ms}
+}
+@keyframes mailwave{0%{transform:none}35%{transform:translateY(-.1em)}100%{transform:none}}
+@keyframes mailspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.mail .ch,.mail .at{animation:none!important}}
 
 /* ── Drifting arcs ── */
 .arcs{position:absolute;inset:0;overflow:hidden;pointer-events:none;color:var(--arc-color,var(--color-accent))}
