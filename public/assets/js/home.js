@@ -1,4 +1,4 @@
-/* sinazk.com · homepage: hero stage, TopTech dot field, magnetic email */
+/* sinazk.com · homepage: hero stage and TopTech dot field */
 (function () {
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
