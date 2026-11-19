@@ -13,7 +13,7 @@ SRC = os.path.join(ROOT, 'src', 'pages')
 OUT = os.path.join(ROOT, 'public')
 SITE = 'https://sinazk.com'
 CV = 'https://drive.google.com/file/d/1TX_gvWSUKH6xAQ0qkMHym0XR-vtFZKS3/view?usp=sharing'
-VERSION = '20261119e'  # bump to bust caches when CSS/JS change
+VERSION = '20261119f'  # bump to bust caches when CSS/JS change
 
 PAGES = [
     dict(src='index.html', out='index.html', path='/',
@@ -36,7 +36,7 @@ CASES = {
         title='SuperReach case study · Sina Zibakerdar',
         description='Designing an AI-coached learning platform for sales and recruitment teams: field research, AI roleplay calls with instant coaching, and a token-based design system.',
         project='SUPERREACH', client='SuperReach', role='Design lead', year='2024',
-        sheets=['Research', 'Problems', 'AI features', 'Scaling', 'Outcome'], next='office-culture-dj'),
+        sheets=['Research', 'Problems', 'AI features', 'Scaling', 'Outcome'], next='sola'),
     'office-culture-dj': dict(name='Office Culture DJ', line='Bringing back the hallway chat for a remote design studio', thumb='/assets/img/home/ocdj-card-800.webp',
         title='Office Culture DJ case study · Sina Zibakerdar',
         description='Bringing back the hallway chat: a three-month service design study of a remote design studio, and a Slack presence space tested with 8 employees.',
@@ -57,11 +57,11 @@ CASES = {
         description='A location-based messaging app: pin a message to a place, and only your friend standing there can read it. Awarded a development grant.',
         project='SOK SOK', client='T-Lab, TUIC', role='Product design', year='2019',
         sheets=['Context', 'Problem', 'Solution'], next='superreach'),
-    'sola': dict(name='Sola', line='Conversation design for an AI WhatsApp career coach', thumb='/assets/img/home/thumb-sola.svg',
+    'sola': dict(name='Sola', line='Conversation design for an AI WhatsApp career coach', thumb='/assets/img/home/sola-card-800.webp',
         title='Sola case study · Sina Zibakerdar',
         description='Conversation design for Sola, an AI career coach on WhatsApp that helps young people land a first job. Bain & Company for The King’s Trust.',
         project='SOLA · GET HIRED', client='Bain &amp; Co', role='UX/UI · CxD', year='2025',
-        sheets=['Context', 'Journey', 'Conversation', 'Voice', 'Interface', 'Guardrails', 'Testing'], next='superreach', robots='noindex, nofollow', css=['case', 'sola']),
+        sheets=['Context', 'Journey', 'Conversation', 'Voice', 'Interface', 'Guardrails', 'Testing'], next='office-culture-dj', robots='noindex, nofollow', css=['case', 'sola']),
 }
 
 for _slug in CASES:

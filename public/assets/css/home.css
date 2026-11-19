@@ -11,10 +11,10 @@
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 /* "Human-Centred": letter outlines (Moirai One, oblique) drawn line by line, then filled.
    The word turns gently toward the cursor (home.js sets --rx/--ry) and ripples on hover. */
-.flourish{display:inline-block;vertical-align:-.031em;color:var(--color-accent-display);transform:perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-origin:50% 60%;will-change:transform}
+.flourish{display:inline-block;vertical-align:-.031em;color:var(--color-accent-text);transform:perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-origin:50% 60%;will-change:transform}
 .fl-svg{display:block;height:.84em;width:auto;overflow:visible}
 .fl-fill{fill:currentColor;opacity:0;animation:flFill .6s ease calc(.7s + var(--i) * 60ms) forwards}
-.fl-ln{fill:none;stroke:currentColor;stroke-width:9;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:1;animation:flDraw 1s cubic-bezier(.6,0,.2,1) calc(.2s + var(--i) * 60ms) forwards}
+.fl-ln{fill:none;stroke:currentColor;stroke-width:30;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:1;animation:flDraw 1s cubic-bezier(.6,0,.2,1) calc(.2s + var(--i) * 60ms) forwards}
 @keyframes flDraw{to{stroke-dashoffset:0}}
 @keyframes flFill{to{opacity:1}}
 .fl-l{transition:transform .45s var(--ease-out) calc(var(--i) * 22ms)}
@@ -44,7 +44,7 @@
 .work-head h2{margin:0}
 .work-head p{margin:0;color:var(--color-text-tertiary);max-width:380px}
 .work-list{display:flex;flex-direction:column;gap:32px}
-.card,.tt-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));background:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:20px;overflow:hidden}
+.card{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));background:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:20px;overflow:hidden}
 .card{text-decoration:none;color:var(--color-text-primary);transition:transform var(--dur-ui) var(--ease-out),box-shadow var(--dur-ui) ease,border-color 200ms ease}
 .card:hover{color:var(--color-text-primary)}
 .card-media{overflow:hidden;min-height:340px}
@@ -54,6 +54,8 @@
 .card-body .t-cap{color:var(--color-text-tertiary)}
 .card-body > p.t-pm{color:var(--color-text-secondary)}
 .card-note{padding:12px 16px;border-radius:12px;background:var(--color-accent-subtle);color:var(--color-accent-text)}
+.card-lock{display:flex;align-items:center;gap:10px;background:var(--color-bg-subtle);color:var(--color-text-secondary)}
+.card-lock .lock{flex:none}
 .card-cta{font-weight:600;color:var(--color-accent-text)}
 @media (hover:hover) and (pointer:fine){
   .card:hover{transform:translateY(-2px);box-shadow:0 18px 40px -18px rgba(16,24,31,.28);border-color:var(--color-accent-border)}
@@ -63,20 +65,6 @@
 }
 .card:active{transform:scale(.99);transition-duration:100ms}
 @media (max-width:760px){.card-media{min-height:0}.card-img{height:auto}.card-body{padding:28px 24px}}
-
-/* TopTech: coming-soon card with a quiet dot field */
-.tt-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));background:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:20px;overflow:hidden}
-.tt-cover{position:relative;min-height:340px;overflow:hidden;background:var(--color-bg-sunken);border-right:1px solid var(--color-border);touch-action:pan-y}
-.tt-cover canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.tt-label{position:absolute;font-family:var(--font-mono);font-size:11px;line-height:16px;letter-spacing:.12em;color:var(--color-text-tertiary);pointer-events:none}
-.tt-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none;text-align:center}
-.tt-mark b{font:500 32px/40px var(--font-sans);letter-spacing:-.01em;color:var(--color-text-primary);background:color-mix(in srgb, var(--color-bg-sunken) 85%, transparent);padding:0 10px;border-radius:8px}
-.tt-mark .t-cap{color:var(--color-text-tertiary);white-space:nowrap}
-.tt-soon{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:6px 12px;border-radius:999px;background:var(--color-accent-subtle);color:var(--color-accent-text);box-shadow:inset 0 0 0 1px var(--color-accent-border)}
-.tt-soon::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--color-accent)}
-.tt-link{font-weight:600;color:var(--color-accent-text);text-decoration:none;align-self:flex-start;padding:4px 0}
-@media (hover:hover) and (pointer:fine){.tt-link:hover .arrow{transform:translateX(4px)}}
-@media (max-width:760px){.tt-cover{min-height:240px;border-right:0;border-bottom:1px solid var(--color-border)}.tt-mark b{font-size:26px;line-height:32px}}
 
 /* ── Other work: a schedule list ── */
 .other{padding-top:48px;padding-bottom:96px}
@@ -105,6 +93,9 @@
 .about-copy{display:flex;flex-direction:column;gap:28px;flex:2 1 520px;min-width:0}
 .about-copy h2,.about-copy p{margin:0}
 .about-copy p{color:var(--color-text-inverse-secondary);max-width:640px}
+.about-copy .about-now{display:flex;align-items:baseline;gap:10px;padding-top:20px;border-top:1px solid var(--color-border-inverse);color:var(--color-text-inverse)}
+.now-dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--color-accent-on-inverse);transform:translateY(-1px);animation:pulse 2.4s ease-out infinite}
 .about .mlabel{color:var(--color-text-inverse-secondary)}
 
-@media (prefers-reduced-motion:reduce){.flourish{transform:none}.fl-fill{animation:none;opacity:1}.fl-ln{animation:none;stroke-dashoffset:0}.flourish:hover .fl-l{transform:none}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(95,208,184,.5)}70%,100%{box-shadow:0 0 0 8px rgba(95,208,184,0)}}
+@media (prefers-reduced-motion:reduce){.now-dot{animation:none}.flourish{transform:none}.fl-fill{animation:none;opacity:1}.fl-ln{animation:none;stroke-dashoffset:0}.flourish:hover .fl-l{transform:none}}
