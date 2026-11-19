@@ -1,9 +1,8 @@
 ---
 # STAGING: deploys to new.sinazk.com and blocks search engines.
-# At launch: change DEPLOYPATH to $HOME/public_html/ and delete the robots.txt line.
+# At launch: change DEPLOYPATH to /home/sinazkco/public_html/ and delete the staging/robots.txt line.
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/new.sinazk.com/
-    - /bin/mkdir -p $DEPLOYPATH
+    - export DEPLOYPATH=/home/sinazkco/new.sinazk.com/
     - /bin/cp -R public/. $DEPLOYPATH
-    - /bin/echo -e "User-agent: *\nDisallow: /" > ${DEPLOYPATH}robots.txt
+    - /bin/cp staging/robots.txt $DEPLOYPATH
