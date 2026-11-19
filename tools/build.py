@@ -39,7 +39,7 @@ CASES = {
         sheets=['Research', 'Problems', 'AI features', 'Scaling', 'Outcome'], next='sola'),
     'office-culture-dj': dict(name='Office Culture DJ', line='Bringing back the hallway chat for a remote design studio', thumb='/assets/img/home/ocdj-card-800.webp',
         title='Office Culture DJ case study · Sina Zibakerdar',
-        description='Bringing back the hallway chat: a three-month service design study of a remote design studio, and a Slack presence space tested with 8 employees.',
+        description='Bringing back the hallway chat: a three-month service design study of a remote design studio, and a Slack presence space, tested with 8 employees using existing tools as stand-ins.',
         project='OFFICE CULTURE DJ', client='Reason', role='UX research', year='2023',
         sheets=['Context', 'Research', 'Pain points', 'Connections', 'Design', 'Results'], next='cryptoland'),
     'cryptoland': dict(name='Cryptoland', line='Onboarding and trading flows for a centralised crypto exchange', thumb='/assets/img/work/1fe9beac-28a0-4d13-9d21-eeb7f2e9de5b-1200.webp',
