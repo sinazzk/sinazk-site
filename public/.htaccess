@@ -1,2 +1,5 @@
 # Never show folder listings
 Options -Indexes
+
+# Unknown URLs show the custom 404 page
+ErrorDocument 404 /404.html

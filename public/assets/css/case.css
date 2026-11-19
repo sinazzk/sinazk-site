@@ -118,3 +118,6 @@ figure img{cursor:zoom-in;transition:box-shadow .5s var(--ease-out)}
 @keyframes lbIn{from{opacity:0}to{opacity:1}}
 @media (max-width:760px){.lb{padding:72px 12px 96px}.lb-prev,.lb-next{top:auto;bottom:20px;margin-top:0}.lb-prev{left:calc(50% - 64px)}.lb-next{right:calc(50% - 64px)}}
 @media (prefers-reduced-motion:reduce){.lb{animation:none}}
+
+/* Text lead-in above a full-width figure */
+.cs-lead{display:flex;flex-direction:column;gap:20px;max-width:720px;margin-bottom:32px}

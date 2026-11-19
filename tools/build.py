@@ -25,6 +25,10 @@ PAGES = [
          title='About · Sina Zibakerdar, Product Designer',
          description='Sina Zibakerdar trained as an architect, studied User Experience Engineering at Goldsmiths in London, and now leads product design at TopTech in Tehran.',
          og='/assets/img/og/about.jpg', css=['about'], nav='about'),
+    dict(src='404.html', out='404.html', path='/404.html',
+         title='Page not found · Sina Zibakerdar',
+         description='This page isn’t in the drawings. It may have moved, or it never existed.',
+         og='/assets/img/og/home.jpg', css=['notfound'], nav='', robots='noindex'),
 ]
 
 CASES = {
@@ -53,12 +57,17 @@ CASES = {
         description='A location-based messaging app: pin a message to a place, and only your friend standing there can read it. Awarded a development grant.',
         project='SOK SOK', client='T-Lab, TUIC', role='Product design', year='2019',
         sheets=['Context', 'Problem', 'Solution'], next='superreach'),
+    'sola': dict(name='Sola', line='Conversation design for an AI WhatsApp career coach', thumb='/assets/img/home/thumb-sola.svg',
+        title='Sola case study · Sina Zibakerdar',
+        description='Conversation design for Sola, an AI career coach on WhatsApp that helps young people land a first job. Bain & Company for The King’s Trust.',
+        project='SOLA · GET HIRED', client='Bain &amp; Co', role='UX/UI · CxD', year='2025',
+        sheets=['Context', 'Journey', 'Conversation', 'Voice', 'Interface', 'Guardrails', 'Testing'], next='superreach', robots='noindex, nofollow', css=['case', 'sola']),
 }
 
 for _slug in CASES:
     PAGES.append(dict(src=_slug + '.html', out='work/%s/index.html' % _slug, path='/work/%s/' % _slug,
                       title=CASES[_slug]['title'], description=CASES[_slug]['description'],
-                      og='/assets/img/og/%s.jpg' % _slug, css=['case'], js=['/assets/js/case.js'], nav='work', case=_slug))
+                      og='/assets/img/og/%s.jpg' % _slug, css=CASES[_slug].get('css', ['case']), robots=CASES[_slug].get('robots'), js=['/assets/js/case.js'], nav='work', case=_slug))
 
 FONT_PRELOADS = ['space-grotesk-400', 'space-grotesk-500']
 
@@ -73,6 +82,7 @@ def head(p):
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         '<title>%s</title>' % t,
         '<meta name="description" content="%s">' % d,
+    ] + (['<meta name="robots" content="%s">' % p['robots']] if p.get('robots') else []) + [
         '<link rel="canonical" href="%s">' % url,
         '<meta name="theme-color" content="#F7F6F2">',
         '<meta property="og:type" content="website">',
