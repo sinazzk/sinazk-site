@@ -13,7 +13,7 @@ SRC = os.path.join(ROOT, 'src', 'pages')
 OUT = os.path.join(ROOT, 'public')
 SITE = 'https://sinazk.com'
 CV = 'https://drive.google.com/file/d/1TX_gvWSUKH6xAQ0qkMHym0XR-vtFZKS3/view?usp=sharing'
-VERSION = '20261119d'  # bump to bust caches when CSS/JS change
+VERSION = '20261119e'  # bump to bust caches when CSS/JS change
 
 PAGES = [
     dict(src='index.html', out='index.html', path='/',

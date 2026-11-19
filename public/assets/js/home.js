@@ -1,4 +1,4 @@
-/* sinazk.com · homepage: hero stage and TopTech dot field */
+/* sinazk.com · homepage: hero stage, "Human-Centred" tilt, TopTech dot field */
 (function () {
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -67,4 +67,26 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setup(); draw(performance.now()); });
   })();
 
+  /* ── "Human-Centred" turns slightly in 3D to face the cursor ── */
+  (function () {
+    var fl = document.querySelector('.flourish');
+    if (!fl || reduce || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var tx = 0, ty = 0, rx = 0, ry = 0, raf = 0, MAX_Y = 14, MAX_X = 10;
+    function tick() {
+      rx += (tx - rx) * 0.08; ry += (ty - ry) * 0.08;
+      fl.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+      fl.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+      raf = Math.abs(tx - rx) + Math.abs(ty - ry) > 0.02 ? requestAnimationFrame(tick) : 0;
+    }
+    function wake() { if (!raf) raf = requestAnimationFrame(tick); }
+    window.addEventListener('mousemove', function (e) {
+      var r = fl.getBoundingClientRect();
+      var dx = (e.clientX - (r.left + r.width / 2)) / (window.innerWidth / 2);
+      var dy = (e.clientY - (r.top + r.height / 2)) / (window.innerHeight / 2);
+      ty = Math.max(-1, Math.min(1, dx)) * MAX_Y;
+      tx = -Math.max(-1, Math.min(1, dy)) * MAX_X;
+      wake();
+    }, { passive: true });
+    document.addEventListener('mouseout', function (e) { if (!e.relatedTarget) { tx = 0; ty = 0; wake(); } });
+  })();
 })();

@@ -9,8 +9,16 @@
 .hero-copy h1,.hero-copy p{margin:0}
 .hero-copy p{color:var(--color-text-secondary)}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.flourish{display:inline-block;white-space:nowrap;font-family:'Moirai One',var(--font-sans);font-weight:500;font-style:italic;color:var(--color-accent-display);animation:draw 1.4s .3s cubic-bezier(.6,0,.2,1) both}
-@keyframes draw{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+/* "Human-Centred": letter outlines (Moirai One, oblique) drawn line by line, then filled.
+   The word turns gently toward the cursor (home.js sets --rx/--ry) and ripples on hover. */
+.flourish{display:inline-block;vertical-align:-.031em;color:var(--color-accent-display);transform:perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-origin:50% 60%;will-change:transform}
+.fl-svg{display:block;height:.84em;width:auto;overflow:visible}
+.fl-fill{fill:currentColor;opacity:0;animation:flFill .6s ease calc(.7s + var(--i) * 60ms) forwards}
+.fl-ln{fill:none;stroke:currentColor;stroke-width:9;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:1;animation:flDraw 1s cubic-bezier(.6,0,.2,1) calc(.2s + var(--i) * 60ms) forwards}
+@keyframes flDraw{to{stroke-dashoffset:0}}
+@keyframes flFill{to{opacity:1}}
+.fl-l{transition:transform .45s var(--ease-out) calc(var(--i) * 22ms)}
+@media (hover:hover) and (pointer:fine){.flourish:hover .fl-l{transform:translateY(-70px)}.flourish:hover .fl-l:nth-child(even){transform:translateY(-35px)}}
 @media (max-width:1000px){.hero-split{grid-template-columns:minmax(0,1fr)}}
 
 /* Hero stage: the static drawing shows until hero-stage.js has mounted */
@@ -99,4 +107,4 @@
 .about-copy p{color:var(--color-text-inverse-secondary);max-width:640px}
 .about .mlabel{color:var(--color-text-inverse-secondary)}
 
-@media (prefers-reduced-motion:reduce){.flourish{animation:none}}
+@media (prefers-reduced-motion:reduce){.flourish{transform:none}.fl-fill{animation:none;opacity:1}.fl-ln{animation:none;stroke-dashoffset:0}.flourish:hover .fl-l{transform:none}}
