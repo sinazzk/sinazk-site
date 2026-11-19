@@ -4,9 +4,9 @@ The live site for Sina Zibakerdar's portfolio, hosted on hidata.org (cPanel shar
 
 ## Staging
 
-Deploys currently go to **new.sinazk.com** (folder `/home/sinazkco/new.sinazk.com`), not the live site. The deploy step also copies `staging/robots.txt`, that blocks search engines.
+Deploys currently go to **new.sinazk.com** (folder `/home/sinazkco/new.sinazk.com`), not the live site. The deploy step also copies `staging/robots.txt` and `staging/.htaccess`, which tell search engines not to index the staging site.
 
-To launch: in `.cpanel.yml`, change `DEPLOYPATH` to `/home/sinazkco/public_html/` and remove the `staging/robots.txt` line. Back up the old `public_html` first.
+To launch: in `.cpanel.yml`, change `DEPLOYPATH` to `/home/sinazkco/public_html/` and remove the two `staging/` lines. Back up the old `public_html` first.
 
 ## How deploys work
 

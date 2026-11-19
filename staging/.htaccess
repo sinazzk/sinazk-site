@@ -1,0 +1,7 @@
+# STAGING ONLY — copied over public/.htaccess on new.sinazk.com.
+# Never show folder listings
+Options -Indexes
+# Tell search engines not to index anything on staging
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
