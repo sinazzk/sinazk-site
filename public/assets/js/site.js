@@ -119,6 +119,14 @@
       if (!raf) raf = requestAnimationFrame(tick);
     }, { passive: true });
     document.addEventListener('mouseout', function (e) { if (!e.relatedTarget) x.style.opacity = '0'; });
+    // scrolling carries the crosshair along with the page for a moment, then the spring pulls it back
+    var lastY = window.scrollY;
+    window.addEventListener('scroll', function () {
+      var d = window.scrollY - lastY; lastY = window.scrollY;
+      if (!seen || reduce) return;
+      p.y = Math.max(t.y - 220, Math.min(t.y + 220, p.y - Math.max(-120, Math.min(120, d))));
+      if (!raf) raf = requestAnimationFrame(tick);
+    }, { passive: true });
   })();
 
   /* ── Contact: the email address leans gently toward the cursor ── */
