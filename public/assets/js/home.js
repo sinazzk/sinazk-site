@@ -10,10 +10,20 @@
     if (!el) return;
     var links = { superreach: '/work/superreach/', ocdj: '/work/office-culture-dj/', soksok: '/work/sok-sok/' };
     if (!window.SinazkHeroStage) return; // keep the still drawing
-    try {
-      window.SinazkHeroStage.mount(el, { links: links, start: 0 });
-      requestAnimationFrame(function () { requestAnimationFrame(function () { wrap.classList.add('is-live'); }); });
-    } catch (err) { /* keep the still drawing */ }
+    function start() {
+      try {
+        window.SinazkHeroStage.mount(el, { links: links, start: 0 });
+        requestAnimationFrame(function () { requestAnimationFrame(function () { wrap.classList.add('is-live'); }); });
+      } catch (err) { /* keep the still drawing */ }
+    }
+    // a tab opened in the background barely animates, so the stage would sit blank: keep the still until the tab is seen
+    if (document.visibilityState === 'hidden') {
+      document.addEventListener('visibilitychange', function once() {
+        if (document.visibilityState === 'hidden') return;
+        document.removeEventListener('visibilitychange', once);
+        start();
+      });
+    } else start();
   })();
 
   /* ── "Human-Centred" turns slightly in 3D to face the cursor ── */
