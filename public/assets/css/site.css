@@ -1,0 +1,173 @@
+/* sinazk.com · shared styles
+   Tokens, type scale, layout helpers and components used on every page.
+   Page-specific styles live in their own file (home.css, about.css, case.css). */
+
+/* ── Fonts (self-hosted, latin subset) ── */
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/space-grotesk-400.woff2) format('woff2')}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/space-grotesk-500.woff2) format('woff2')}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/space-grotesk-600.woff2) format('woff2')}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/space-grotesk-700.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/jetbrains-mono-400.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/jetbrains-mono-500.woff2) format('woff2')}
+@font-face{font-family:'Moirai One';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/moirai-one-400.woff2) format('woff2')}
+
+/* ── Design tokens ── */
+:root{
+  /* Primitives: warm paper neutrals */
+  --paper-50:#F7F6F2; --paper-100:#EFEDE6; --paper-300:#D6D4CC; --paper-500:#A8A498;
+  /* Primitives: cool ink neutrals */
+  --ink-200:#C8D0D6; --ink-500:#5A6873; --ink-600:#4A5560; --ink-800:#2E3A44; --ink-950:#10181F;
+  /* Primitives: teal */
+  --teal-50:#EAF5F1; --teal-200:#9FD3C6; --teal-300:#5FD0B8; --teal-500:#1B9C85; --teal-600:#168B75; --teal-700:#0E6E5C;
+  /* Semantics: components use only these */
+  --color-bg-page:var(--paper-50); --color-bg-surface:#FFFFFF; --color-bg-subtle:var(--paper-100); --color-bg-subtle-hover:color-mix(in oklab, var(--color-bg-subtle), var(--color-text-primary) 4%);
+  --color-bg-inverse:var(--ink-950);
+  --color-text-primary:var(--ink-950); --color-text-secondary:var(--ink-800); --color-text-tertiary:var(--ink-600);
+  --color-text-inverse:var(--paper-50); --color-text-inverse-secondary:var(--ink-200); --color-text-on-accent:#FFFFFF;
+  --color-border:var(--paper-300); --color-border-strong:var(--paper-500);
+  --color-border-inverse:var(--ink-500); --color-border-inverse-subtle:var(--ink-600);
+  --color-accent:var(--teal-500); --color-accent-display:var(--teal-600); --color-accent-solid:var(--teal-700); --color-accent-text:var(--teal-700); --color-accent-text-hover:color-mix(in oklab, var(--color-accent-text), black 17%);
+  --color-accent-subtle:var(--teal-50); --color-accent-border:var(--teal-200); --color-accent-on-inverse:var(--teal-300);
+  /* Motion */
+  --ease-out:cubic-bezier(0.23,1,0.32,1); --ease-in-out:cubic-bezier(0.77,0,0.175,1);
+  --dur-press:160ms; --dur-ui:240ms; --dur-media:320ms;
+  /* Type families */
+  --font-sans:'Space Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+/* ── Base ── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:88px}
+body{margin:0;background:var(--color-bg-page);color:var(--color-text-primary);font-family:var(--font-sans);font-size:16px;line-height:24px;min-height:100vh;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+img[width][height]{height:auto}
+::selection{background:var(--color-accent-subtle);color:var(--color-text-primary)}
+:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
+a{color:var(--color-accent-text)}
+a:hover{color:var(--color-accent-text-hover)}
+main:focus{outline:none}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ── Type scale · base 16px · ×1.25 (major third), rounded to a 4px grid ── */
+.t-h1{font-size:76px;line-height:80px;letter-spacing:-.03em;font-weight:500}
+.t-h2{font-size:60px;line-height:68px;letter-spacing:-.025em;font-weight:500}
+.t-h3{font-size:48px;line-height:56px;letter-spacing:-.02em;font-weight:500}
+.t-h4{font-size:40px;line-height:48px;letter-spacing:-.015em;font-weight:500}
+.t-h5{font-size:32px;line-height:40px;letter-spacing:-.01em;font-weight:500}
+.t-h6{font-size:24px;line-height:32px;letter-spacing:-.005em;font-weight:500}
+.t-pl{font-size:20px;line-height:32px;font-weight:400}
+.t-pm{font-size:16px;line-height:24px;font-weight:400}
+.t-ps{font-size:14px;line-height:20px;font-weight:400}
+.t-cap{font-family:var(--font-mono);font-size:12px;line-height:16px;letter-spacing:.08em;font-weight:400;text-transform:uppercase}
+@media (max-width:760px){.t-h1{font-size:44px;line-height:48px}.t-h2{font-size:40px;line-height:48px}.t-h3{font-size:32px;line-height:40px}.t-h4{font-size:28px;line-height:36px}.t-h5{font-size:24px;line-height:32px}.t-h6{font-size:20px;line-height:28px}.t-pl{font-size:18px;line-height:28px}}
+h1,h2,h3,.t-h1,.t-h2,.t-h3,.t-h4,.t-h5,.t-h6{text-wrap:balance}
+p,dd,li,figcaption{text-wrap:pretty}
+
+/* ── Blueprint grid + cursor spotlight ── */
+.bp{background-image:linear-gradient(rgba(16,24,31,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(16,24,31,.055) 1px,transparent 1px);background-size:48px 48px}
+.spot{--mx:600px;--my:300px}
+.spot-glow{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(380px circle at var(--mx) var(--my),rgba(27,156,133,.05),transparent 70%)}
+.gridlit{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s ease;background-image:linear-gradient(rgba(27,156,133,.45) 1px,transparent 1px),linear-gradient(90deg,rgba(27,156,133,.45) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(200px circle at var(--mx) var(--my),#000 0%,transparent 100%);mask-image:radial-gradient(200px circle at var(--mx) var(--my),#000 0%,transparent 100%)}
+.spot.on .spot-glow,.spot.on .gridlit{opacity:1}
+
+/* ── Skip link ── */
+.skip{position:absolute;left:16px;top:-56px;z-index:80;padding:10px 16px;border-radius:999px;background:var(--color-bg-inverse);color:var(--color-text-inverse)!important;text-decoration:none;font-weight:500;transition:top .2s ease}
+.skip:focus{top:12px;outline:2px solid var(--color-accent);outline-offset:2px}
+
+/* ── Header ── */
+.site-header{position:sticky;top:0;z-index:5;background:rgba(247,246,242,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--color-border)}
+.site-nav{max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.site-home{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--color-text-primary)}
+.site-home img{width:32px;height:32px;display:block;transition:transform var(--dur-ui) var(--ease-out)}
+.site-name{font-weight:600}
+.site-links{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.site-links a.nl{display:inline-block;padding:8px 2px}
+.nl{position:relative;color:var(--color-text-primary);text-decoration:none}
+.nl::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:var(--color-accent);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.nl[aria-current="page"]::after{transform:scaleX(1)}
+@media (hover:hover) and (pointer:fine){.nl:hover::after{transform:scaleX(1)}.site-home:hover img{transform:rotate(-2deg) scale(1.03)}}
+@media (max-width:760px){
+  .site-nav{flex-wrap:nowrap;padding:12px 20px;gap:12px}
+  .site-name{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .site-links{gap:18px;flex-wrap:nowrap}
+  .site-links a{white-space:nowrap}
+  .site-links .btn{padding:10px 16px}
+}
+@media (max-width:380px){.site-links{gap:14px}.site-links .btn{padding:8px 14px}.site-links .nav-cv{display:none}}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:24px;font-weight:500;text-decoration:none;border-radius:999px;padding:16px 24px;transition:background-color 200ms ease,color 200ms ease,border-color 200ms ease,transform var(--dur-press) var(--ease-out)}
+.btn-dark{background:var(--color-bg-inverse);color:var(--color-text-inverse)}
+.btn-dark:hover{color:var(--color-text-inverse)}
+.btn-accent{background:var(--color-accent-solid);color:var(--color-text-on-accent)}
+.btn-accent:hover{color:var(--color-text-on-accent)}
+.btn-line{border:1px solid var(--color-bg-inverse);color:var(--color-text-primary);padding:15px 24px}
+.btn-line:hover{color:var(--color-text-primary)}
+.btn-light{background:var(--color-bg-page);color:var(--color-text-primary)}
+.btn-light:hover{color:var(--color-text-primary)}
+.btn-line-inv{border:1px solid var(--color-border-inverse);color:var(--color-text-inverse);padding:15px 24px}
+.btn-line-inv:hover{color:var(--color-text-inverse)}
+.btn-sm{padding:12px 20px}
+.btn:active{transform:scale(.97);transition-duration:100ms}
+.arrow{display:inline-block;transition:transform var(--dur-ui) var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.btn:hover{transform:translateY(-1px)}.btn:hover .arrow,.next:hover .arrow{transform:translateX(4px)}}
+
+/* ── Chips ── */
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:6px 12px;border-radius:999px;background:var(--color-bg-subtle);color:var(--color-text-tertiary);transition:background-color 200ms ease}
+
+/* ── Sheet margin labels: sheet numbers run up the drawing margin ── */
+.mlabel{position:absolute;left:6px;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--font-mono);font-size:11px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;pointer-events:none;display:flex;align-items:center;gap:10px;color:var(--color-text-tertiary)}
+.mlabel::before{content:'';width:1px;height:28px;background:currentColor;opacity:.45;flex:none}
+@media (min-width:1360px){.mlabel{left:-44px}}
+@media (max-width:760px){.mlabel{display:none}}
+
+/* ── Hatch divider (canvas drawn by site.js) ── */
+canvas.hline{display:block;width:100%;height:24px;pointer-events:none}
+
+/* ── Drifting arcs ── */
+.arcs{position:absolute;inset:0;overflow:hidden;pointer-events:none;color:var(--arc-color,var(--color-accent))}
+.arcs.r{-webkit-mask-image:linear-gradient(to left,#000 0,#000 var(--arc-band,28%),transparent calc(var(--arc-band,28%) + 12%));mask-image:linear-gradient(to left,#000 0,#000 var(--arc-band,28%),transparent calc(var(--arc-band,28%) + 12%))}
+.arcs.l{-webkit-mask-image:linear-gradient(to right,#000 0,#000 var(--arc-band,28%),transparent calc(var(--arc-band,28%) + 12%));mask-image:linear-gradient(to right,#000 0,#000 var(--arc-band,28%),transparent calc(var(--arc-band,28%) + 12%))}
+.arcs svg{position:absolute;top:50%;width:2400px;height:2400px;transform:translateY(-50%);transform-origin:50% 50%}
+.arcs.r svg{right:-1660px}.arcs.l svg{left:-1660px}
+.arcs circle{fill:none;stroke:currentColor;vector-effect:non-scaling-stroke;transform-box:view-box;transform-origin:1200px 1200px}
+.arcs .s1{animation:arcspin 160s linear infinite}.arcs .s2{animation:arcspin 220s linear infinite reverse}.arcs .s3{animation:arcspin 120s linear infinite}
+@keyframes arcspin{to{transform:rotate(360deg)}}
+@media (max-width:1000px){.arcs.l,.arcs.r{-webkit-mask-image:none;mask-image:none}.arcs svg,.arcs.l svg,.arcs.r svg{top:auto;left:auto;right:-1300px;bottom:-1300px;transform:scale(.22)}}
+
+/* ── Footer ── */
+.site-footer{border-top:1px solid var(--color-border)}
+.site-footer-in{max-width:1200px;margin:0 auto;padding:28px 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--color-text-tertiary)}
+.site-footer-in div{display:flex;gap:24px}
+.site-footer a{display:inline-block;padding:6px 0;color:var(--color-text-tertiary)}
+
+/* ── Cursor crosshair (fine pointers only, drawn by site.js) ── */
+.xhair{position:fixed;top:0;left:0;width:22px;height:22px;pointer-events:none;z-index:60;opacity:0;transition:opacity .3s ease;will-change:transform}
+.xhair-in{position:absolute;inset:0;transition:transform var(--dur-ui) var(--ease-out)}
+.xhair-in.on{transform:rotate(45deg) scale(1.35)}
+.xh{position:absolute;background:var(--color-accent)}
+@media (hover:none),(pointer:coarse){.xhair{display:none}}
+
+/* ── Colour/surface transitions ── */
+a,.chip{transition-property:color,background-color,border-color,box-shadow,filter,opacity,transform;transition-duration:200ms;transition-timing-function:ease}
+
+/* ── Scroll reveal and page-title entrance ── */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+.enter > *{animation:enter 480ms var(--ease-out) both}
+.enter > :nth-child(2){animation-delay:60ms}
+.enter > :nth-child(3){animation-delay:120ms}
+.enter > :nth-child(4){animation-delay:180ms}
+.enter > :nth-child(n+5){animation-delay:240ms}
+
+/* ── Reduced motion: keep fades and colour, drop movement ── */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-property:opacity,color,background-color,border-color,box-shadow!important}
+  .arcs svg,.arcs circle{animation:none!important}
+  @keyframes rise{from{opacity:0}to{opacity:1}}
+  @keyframes enter{from{opacity:0}to{opacity:1}}
+}
+@media (max-width:760px){.hide-sm{display:none!important}}
