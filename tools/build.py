@@ -143,7 +143,7 @@ FOOTER = '''<footer class="site-footer">
   <span class="xh" style="right:0;top:10px;width:7px;height:1.5px"></span>
   <span class="xh" style="left:10px;top:0;width:1.5px;height:7px"></span>
   <span class="xh" style="left:10px;bottom:0;width:1.5px;height:7px"></span>
-  <span class="xh" style="left:9.5px;top:9.5px;width:2.5px;height:2.5px;border-radius:50%;background:var(--color-bg-inverse)"></span>
+  <span class="xh" style="left:9.5px;top:9.5px;width:2.5px;height:2.5px;border-radius:0;background:var(--color-bg-inverse)"></span>
 </div></div>
 </div>'''
 

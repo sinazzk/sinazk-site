@@ -7,7 +7,7 @@
 .ab-intro p{color:var(--color-text-secondary);max-width:640px}
 .ab-actions{display:flex;gap:12px;flex-wrap:wrap}
 .ab-figure{margin:0;display:flex;flex-direction:column;gap:16px;min-width:0;max-width:420px;justify-self:end;width:100%}
-.ab-figure img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:20px}
+.ab-figure img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:0}
 .ab-facts{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;padding:16px 0 4px;border-top:1px solid var(--color-border)}
 .ab-facts dt{color:var(--color-text-tertiary)}
 .ab-facts dd{margin:0}
@@ -30,7 +30,7 @@
 
 /* How I work */
 .ab-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
-.ab-card{border:1px solid var(--color-border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:8px;background:var(--color-bg-surface)}
+.ab-card{border:1px solid var(--color-border);border-radius:0;padding:24px;display:flex;flex-direction:column;gap:8px;background:var(--color-bg-surface)}
 .ab-card h3,.ab-card p{margin:0}
 .ab-card p{color:var(--color-text-secondary)}
 
@@ -54,7 +54,7 @@
 .ab-langs{margin-top:16px!important}
 
 /* Outside work: hobby icons that crossfade, with a hover flourish */
-.hob{position:relative;height:304px;border:1px solid var(--color-border);border-radius:16px;background:var(--color-bg-surface);overflow:hidden;color:var(--color-text-primary);background-image:radial-gradient(rgba(16,24,31,.10) 1px,transparent 1.2px);background-size:18px 18px;background-position:9px 9px}
+.hob{position:relative;height:304px;border:1px solid var(--color-border);border-radius:0;background:var(--color-bg-surface);overflow:hidden;color:var(--color-text-primary);background-image:radial-gradient(rgba(16,24,31,.10) 1px,transparent 1.2px);background-size:18px 18px;background-position:9px 9px}
 .hob-item{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;opacity:0;animation:hobFade 12s cubic-bezier(.4,0,.2,1) infinite both}
 .hob-item:nth-child(2){animation-delay:-9s}.hob-item:nth-child(3){animation-delay:-6s}.hob-item:nth-child(4){animation-delay:-3s}
 .hob-item .t-cap{color:var(--color-text-tertiary);transition:color .3s ease}

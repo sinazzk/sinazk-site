@@ -25,7 +25,7 @@
   /* ── Hatch dividers: flat hairlines that break into leaning ticks near the cursor, then spring back ── */
   (function () {
     var lines = [], mx = -9999, my = -9999, vx = 0, lx = null, dir = 1, raf = 0;
-    var GAP = 4, MAXA = 1.05, BASE = [214, 212, 204], HOT = [27, 156, 133];
+    var GAP = 4, MAXA = 1.05, BASE = [214, 212, 204], HOT = [117, 117, 117];
     function setup() {
       var dpr = Math.min(2, window.devicePixelRatio || 1);
       lines = Array.prototype.map.call(document.querySelectorAll('canvas.hline'), function (c) {
