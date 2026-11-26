@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Sola case study"
+AuthUserFile /home/sinazkco/.htpasswds/portfolio-sola/passwd
+Require valid-user

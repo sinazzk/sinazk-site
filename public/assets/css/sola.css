@@ -2,7 +2,7 @@
 .anno-key{display:none;list-style:none;margin:12px 0 0;padding:0;counter-reset:key}
 .anno-key li{counter-increment:key;display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--color-border);font-size:14px;line-height:20px;color:var(--color-text-secondary)}
 .anno-key li:last-child{border-bottom:1px solid var(--color-border)}
-.anno-key li::before{content:counter(key);flex:none;width:22px;height:22px;margin-top:-1px;border-radius:50%;background:var(--color-bg-inverse);color:var(--color-text-inverse);font:600 11px/22px 'JetBrains Mono',monospace;text-align:center}
+.anno-key li::before{content:counter(key);flex:none;width:22px;height:22px;margin-top:-1px;border-radius:0;background:var(--color-bg-inverse);color:var(--color-text-inverse);font:600 11px/22px 'JetBrains Mono',monospace;text-align:center}
 .wa-row{display:flex;justify-content:center;align-items:flex-start;gap:32px;flex-wrap:wrap}
 .phone{flex:none;width:288px;border-radius:44px;background:#0B0F14;padding:9px;box-sizing:border-box;box-shadow:0 30px 60px -36px rgba(16,24,31,.55);font-family:Roboto,'Segoe UI',system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none}
 .ph-scr{position:relative;height:580px;border-radius:36px;overflow:hidden;background:#EFE9E1;display:flex;flex-direction:column;color:#111B21}
@@ -58,12 +58,12 @@
 .wa-fig{margin:0;display:flex;flex-direction:column;gap:16px;width:288px;max-width:100%}
 .wa-fig .anno-key{display:block;margin:0}
 .wa-fig figcaption{order:-1}
-.hmw{background:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px}
+.hmw{background:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:0;padding:24px;display:flex;flex-direction:column;gap:16px}
 .hmw-chips{display:flex;flex-wrap:wrap;gap:8px}
-.hmw-chips span{font-size:14px;line-height:20px;padding:6px 12px;border-radius:6px;background:var(--color-bg-subtle);color:var(--color-text-secondary)}
+.hmw-chips span{font-size:14px;line-height:20px;padding:6px 12px;border-radius:0;background:var(--color-bg-subtle);color:var(--color-text-secondary)}
 .hmw-chips span.k{background:var(--color-accent-subtle);color:var(--color-accent-text);box-shadow:inset 0 0 0 1px var(--color-accent-border)}
 .personas{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
-.persona{border:1px solid var(--color-border);border-radius:16px;background:var(--color-bg-surface);padding:24px;display:flex;flex-direction:column;gap:14px}
+.persona{border:1px solid var(--color-border);border-radius:0;background:var(--color-bg-surface);padding:24px;display:flex;flex-direction:column;gap:14px}
 .persona-h{display:flex;align-items:center;gap:14px}
 .tone{width:100%;border-collapse:collapse;font-size:15px;line-height:22px}
 .tone th{font-family:'JetBrains Mono',monospace;font-size:12px;line-height:16px;letter-spacing:.08em;font-weight:400;color:var(--color-text-tertiary);text-align:left;padding:0 16px 10px 0;border-bottom:1px solid var(--color-border-strong)}
@@ -73,9 +73,9 @@
 .tone .dont{color:var(--color-text-tertiary);text-decoration:line-through;text-decoration-thickness:1px}
 .tone-wrap{overflow-x:auto}
 .concepts{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,.9fr);gap:16px}
-.concept{border:1px solid var(--color-border);border-radius:12px;background:var(--color-bg-surface);padding:20px;display:flex;flex-direction:column;gap:10px}
+.concept{border:1px solid var(--color-border);border-radius:0;background:var(--color-bg-surface);padding:20px;display:flex;flex-direction:column;gap:10px}
 .scales{display:flex;flex-wrap:wrap;gap:8px}
-.scales span{font-family:'JetBrains Mono',monospace;font-size:12px;line-height:16px;letter-spacing:.06em;padding:8px 12px;border:1px solid var(--color-border-strong);border-radius:999px;color:var(--color-text-secondary)}
+.scales span{font-family:'JetBrains Mono',monospace;font-size:12px;line-height:16px;letter-spacing:.06em;padding:8px 12px;border:1px solid var(--color-border-strong);border-radius:0;color:var(--color-text-secondary)}
 @media (max-width:960px){.personas,.concepts{grid-template-columns:1fr}}
 @media (max-width:760px){.tone{font-size:14px;line-height:20px}.wa-row{gap:48px}}
 .wa-fig::after{display:none}

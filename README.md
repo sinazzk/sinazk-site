@@ -25,3 +25,16 @@ To launch: in `.cpanel.yml`, change `DEPLOYPATH` to `/home/sinazkco/public_html/
 
 - This repo is public. Never commit passwords, keys, `.env` files or client material that isn't already on the site.
 - Deploy copies files but never deletes them. If you remove a page, delete it from `public_html` in File Manager too.
+
+## Sola case-study access
+
+Before deploying, create the Apache password file at
+`/home/sinazkco/.htpasswds/portfolio-sola/passwd` with `htpasswd` or through
+your hosting administrator. Keep it outside both document roots and the Git
+repository. After deploying, check that `/work/sola/` and
+`/work/sola/index.html` return HTTP 401 without credentials and load with valid
+credentials. Share credentials privately on request.
+
+The Python preview server ignores Apache configuration. Use an Apache preview
+to test authentication. The password prompt controls access on the hosted site.
+The case-study files and their history are also present in the public repository.

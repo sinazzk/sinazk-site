@@ -44,7 +44,7 @@ CASES = {
         sheets=['Context', 'Research', 'Pain points', 'Connections', 'Design', 'Results'], next='cryptoland'),
     'cryptoland': dict(name='Cryptoland', line='Onboarding and trading flows for a centralised crypto exchange', thumb='/assets/img/work/1fe9beac-28a0-4d13-9d21-eeb7f2e9de5b-1200.webp',
         title='Cryptoland case study · Sina Zibakerdar',
-        description='Redesigning onboarding, KYC and trading for one of Iran’s most popular cryptocurrency exchanges, across web and mobile.',
+        description='Redesigning onboarding, KYC and trading for a crypto exchange with tens of thousands of users, across web and mobile.',
         project='CRYPTOLAND', client='Dadehpardaz', role='Product design', year='2021',
         sheets=['Context', 'Research', 'Design', 'Outcome'], next='proda'),
     'proda': dict(name='Proda', line='Field app for telecom tower inspection and repair', thumb='/assets/img/work/2925ab6f-1660-4211-9ebe-5fa36edb23df-786.webp',
@@ -143,7 +143,7 @@ FOOTER = '''<footer class="site-footer">
   <span class="xh" style="right:0;top:10px;width:7px;height:1.5px"></span>
   <span class="xh" style="left:10px;top:0;width:1.5px;height:7px"></span>
   <span class="xh" style="left:10px;bottom:0;width:1.5px;height:7px"></span>
-  <span class="xh" style="left:9.5px;top:9.5px;width:2.5px;height:2.5px;border-radius:50%;background:var(--color-bg-inverse)"></span>
+  <span class="xh" style="left:9.5px;top:9.5px;width:2.5px;height:2.5px;border-radius:0;background:var(--color-bg-inverse)"></span>
 </div></div>
 </div>'''
 
@@ -151,7 +151,7 @@ FOOTER = '''<footer class="site-footer">
 CONTACT = '''<!-- CONTACT -->
 <section id="contact" class="contact bp" aria-labelledby="contact-title">
   <div class="wrap contact-in reveal">
-    <h2 id="contact-title" class="t-h3">Hiring for a product designer, or building something complex? Let’s talk.</h2>
+    <h2 id="contact-title" class="t-h3">{heading}</h2>
     <div class="mailwrap">
       <a href="mailto:hi@sinazk.com" class="mail" aria-label="Email hi@sinazk.com"><span class="ch" aria-hidden="true" style="--i:0">h</span><span class="ch" aria-hidden="true" style="--i:1">i</span><span class="at" aria-hidden="true">@</span><span class="ch" aria-hidden="true" style="--i:3">s</span><span class="ch" aria-hidden="true" style="--i:4">i</span><span class="ch" aria-hidden="true" style="--i:5">n</span><span class="ch" aria-hidden="true" style="--i:6">a</span><span class="ch" aria-hidden="true" style="--i:7">z</span><span class="ch" aria-hidden="true" style="--i:8">k</span><span class="ch" aria-hidden="true" style="--i:9">.</span><span class="ch" aria-hidden="true" style="--i:10">c</span><span class="ch" aria-hidden="true" style="--i:11">o</span><span class="ch" aria-hidden="true" style="--i:12">m</span></a>
       <canvas class="hline" aria-hidden="true"></canvas>
@@ -184,8 +184,10 @@ def next_band(slug):
 
 def build():
     for p in PAGES:
+        heading = ('Hiring for a product designer? Let’s talk.' if p['src'] == 'index.html'
+                   else 'Hiring for a product designer, or building something complex? Let’s talk.')
         body = open(os.path.join(SRC, p['src']), encoding='utf-8').read().strip('\n')
-        body = re.sub(r'\{\{CONTACT (\d\d)\}\}', lambda m: CONTACT.replace('{sheet}', m.group(1)), body).replace('{{CV}}', CV)
+        body = re.sub(r'\{\{CONTACT (\d\d)\}\}', lambda m: CONTACT.replace('{sheet}', m.group(1)).replace('{heading}', heading), body).replace('{{CV}}', CV)
         if p.get('case'):
             c = CASES[p['case']]
             body += '\n' + next_band(c['next']) + '\n' + tblock(c)
