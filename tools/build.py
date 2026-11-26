@@ -44,7 +44,7 @@ CASES = {
         sheets=['Context', 'Research', 'Pain points', 'Connections', 'Design', 'Results'], next='cryptoland'),
     'cryptoland': dict(name='Cryptoland', line='Onboarding and trading flows for a centralised crypto exchange', thumb='/assets/img/work/1fe9beac-28a0-4d13-9d21-eeb7f2e9de5b-1200.webp',
         title='Cryptoland case study · Sina Zibakerdar',
-        description='Redesigning onboarding, KYC and trading for one of Iran’s most popular cryptocurrency exchanges, across web and mobile.',
+        description='Redesigning onboarding, KYC and trading for a crypto exchange with tens of thousands of users, across web and mobile.',
         project='CRYPTOLAND', client='Dadehpardaz', role='Product design', year='2021',
         sheets=['Context', 'Research', 'Design', 'Outcome'], next='proda'),
     'proda': dict(name='Proda', line='Field app for telecom tower inspection and repair', thumb='/assets/img/work/2925ab6f-1660-4211-9ebe-5fa36edb23df-786.webp',
