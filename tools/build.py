@@ -151,7 +151,7 @@ FOOTER = '''<footer class="site-footer">
 CONTACT = '''<!-- CONTACT -->
 <section id="contact" class="contact bp" aria-labelledby="contact-title">
   <div class="wrap contact-in reveal">
-    <h2 id="contact-title" class="t-h3">Hiring for a product designer, or building something complex? Let’s talk.</h2>
+    <h2 id="contact-title" class="t-h3">{heading}</h2>
     <div class="mailwrap">
       <a href="mailto:hi@sinazk.com" class="mail" aria-label="Email hi@sinazk.com"><span class="ch" aria-hidden="true" style="--i:0">h</span><span class="ch" aria-hidden="true" style="--i:1">i</span><span class="at" aria-hidden="true">@</span><span class="ch" aria-hidden="true" style="--i:3">s</span><span class="ch" aria-hidden="true" style="--i:4">i</span><span class="ch" aria-hidden="true" style="--i:5">n</span><span class="ch" aria-hidden="true" style="--i:6">a</span><span class="ch" aria-hidden="true" style="--i:7">z</span><span class="ch" aria-hidden="true" style="--i:8">k</span><span class="ch" aria-hidden="true" style="--i:9">.</span><span class="ch" aria-hidden="true" style="--i:10">c</span><span class="ch" aria-hidden="true" style="--i:11">o</span><span class="ch" aria-hidden="true" style="--i:12">m</span></a>
       <canvas class="hline" aria-hidden="true"></canvas>
@@ -184,8 +184,10 @@ def next_band(slug):
 
 def build():
     for p in PAGES:
+        heading = ('Hiring for a product designer? Let’s talk.' if p['src'] == 'index.html'
+                   else 'Hiring for a product designer, or building something complex? Let’s talk.')
         body = open(os.path.join(SRC, p['src']), encoding='utf-8').read().strip('\n')
-        body = re.sub(r'\{\{CONTACT (\d\d)\}\}', lambda m: CONTACT.replace('{sheet}', m.group(1)), body).replace('{{CV}}', CV)
+        body = re.sub(r'\{\{CONTACT (\d\d)\}\}', lambda m: CONTACT.replace('{sheet}', m.group(1)).replace('{heading}', heading), body).replace('{{CV}}', CV)
         if p.get('case'):
             c = CASES[p['case']]
             body += '\n' + next_band(c['next']) + '\n' + tblock(c)
