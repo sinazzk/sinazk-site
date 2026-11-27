@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'src', 'pages')
 OUT = os.path.join(ROOT, 'public')
 SITE = 'https://sinazk.com'
-CV = 'https://drive.google.com/file/d/1TX_gvWSUKH6xAQ0qkMHym0XR-vtFZKS3/view?usp=sharing'
+CV = '/cv'
 VERSION = '20261127c'  # bump to bust caches when CSS/JS change
 
 PAGES = [

@@ -3,3 +3,6 @@ Options -Indexes
 
 # Unknown URLs show the custom 404 page
 ErrorDocument 404 /404.html
+
+# Route CV link clicks through the site before opening Google Drive.
+RedirectMatch 302 ^/cv/?$ https://drive.google.com/file/d/1TX_gvWSUKH6xAQ0qkMHym0XR-vtFZKS3/view?usp=sharing
