@@ -42,3 +42,11 @@ credentials. Share credentials privately on request.
 The Python preview server ignores Apache configuration. Use an Apache preview
 to test authentication. The password prompt controls access on the hosted site.
 The case-study files and their history are also present in the public repository.
+
+## Basic traffic counts
+
+In cPanel, use **Metrics → Awstats** for page traffic or **Metrics → Raw Access**
+for request-level counts. Count successful document requests for page views and
+`GET /cv` requests returning `302` for CV link clicks. These are request counts,
+which can include bots and repeat clicks. Google Drive handles the PDF, so a
+redirect cannot tell whether the visitor saved it.
