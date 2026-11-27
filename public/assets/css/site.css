@@ -72,7 +72,7 @@ p,dd,li,figcaption{text-wrap:pretty}
 .spot.on .spot-glow,.spot.on .gridlit{opacity:1}
 
 /* ── Skip link ── */
-.skip{position:absolute;left:16px;top:-56px;z-index:80;padding:10px 16px;border-radius:0;background:var(--color-bg-inverse);color:var(--color-text-inverse)!important;text-decoration:none;font-weight:500;transition:top .2s ease}
+.skip{position:absolute;left:16px;top:-56px;z-index:80;padding:10px 16px;border-radius:4px;background:var(--color-bg-inverse);color:var(--color-text-inverse)!important;text-decoration:none;font-weight:500;transition:top .2s ease}
 .skip:focus{top:12px;outline:2px solid var(--color-accent);outline-offset:2px}
 
 /* ── Header ── */
@@ -97,7 +97,7 @@ p,dd,li,figcaption{text-wrap:pretty}
 @media (max-width:380px){.site-links{gap:14px}.site-links .btn{padding:8px 14px}.site-links .nav-cv{display:none}}
 
 /* ── Buttons ── */
-.btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:24px;font-weight:500;text-decoration:none;border-radius:0;padding:16px 24px;transition:background-color 200ms ease,color 200ms ease,border-color 200ms ease,transform var(--dur-press) var(--ease-out)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:24px;font-weight:500;text-decoration:none;border-radius:4px;padding:16px 24px;transition:background-color 200ms ease,color 200ms ease,border-color 200ms ease,transform var(--dur-press) var(--ease-out)}
 .btn-dark{background:var(--color-bg-inverse);color:var(--color-text-inverse)}
 .btn-dark:hover{color:var(--color-text-inverse)}
 .btn-accent{background:var(--color-accent-solid);color:var(--color-text-on-accent)}
@@ -115,7 +115,7 @@ p,dd,li,figcaption{text-wrap:pretty}
 
 /* ── Chips ── */
 .chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{padding:6px 12px;border-radius:0;background:var(--color-bg-subtle);color:var(--color-text-tertiary);transition:background-color 200ms ease}
+.chip{padding:6px 12px;border-radius:4px;background:var(--color-bg-subtle);color:var(--color-text-tertiary);transition:background-color 200ms ease}
 
 /* ── Sheet margin labels: sheet numbers run up the drawing margin ── */
 .mlabel{position:absolute;left:6px;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--font-mono);font-size:11px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;pointer-events:none;display:flex;align-items:center;gap:10px;color:var(--color-text-tertiary)}
@@ -140,7 +140,7 @@ h1,h2,h3,h4,h5,h6,p,figure,blockquote,dl,dd{margin:0}
 .mail{display:inline-block;white-space:nowrap;font-size:clamp(40px,8vw,104px);font-weight:600;letter-spacing:-.03em;color:var(--color-accent-text);text-decoration:none;line-height:1.1}
 .mail .ch{display:inline-block;transition:color .45s ease;transition-delay:calc(var(--i) * 18ms)}
 .mail .at{display:inline-block;color:var(--color-accent-display);transition:color .45s ease}
-.mail:focus-visible{outline:2px solid var(--color-accent);outline-offset:8px;border-radius:0}
+.mail:focus-visible{outline:2px solid var(--color-accent);outline-offset:8px;border-radius:4px}
 .mailwrap canvas.hline{height:28px;margin-top:-4px}
 @media (hover:hover) and (pointer:fine){
   .mail:hover .ch,.mail:focus-visible .ch{color:var(--color-text-primary);animation:mailwave .7s var(--ease-out) both;animation-delay:calc(var(--i) * 28ms)}
@@ -174,7 +174,7 @@ h1,h2,h3,h4,h5,h6,p,figure,blockquote,dl,dd{margin:0}
 .xh{position:absolute;background:var(--color-accent)}
 /* Over an image the crosshair turns into a zoom cursor: a teal magnifier in a dark circle */
 .xh-rot{position:absolute;inset:0;transition:opacity .2s ease}
-.xh-pill{position:absolute;right:-4px;bottom:-4px;width:30px;height:30px;display:grid;place-items:center;border-radius:0;background:var(--color-bg-inverse);color:var(--color-accent-on-inverse);opacity:0;transform:scale(.6);transform-origin:100% 100%;transition:opacity .2s ease,transform .3s cubic-bezier(.2,.9,.3,1.3)}
+.xh-pill{position:absolute;right:-4px;bottom:-4px;width:30px;height:30px;display:grid;place-items:center;border-radius:4px;background:var(--color-bg-inverse);color:var(--color-accent-on-inverse);opacity:0;transform:scale(.6);transform-origin:100% 100%;transition:opacity .2s ease,transform .3s cubic-bezier(.2,.9,.3,1.3)}
 .xhair.view .xh-rot{opacity:0}
 .xhair.view .xh-pill{opacity:1;transform:none}
 .xh-on.has-lb main figure img{cursor:none}
