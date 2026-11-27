@@ -199,6 +199,14 @@ def build():
         open(out, 'w', encoding='utf-8').write(doc)
         print('wrote', os.path.relpath(out, ROOT))
 
+    urls = ['  <url><loc>%s</loc></url>' % html.escape(SITE + page['path'])
+            for page in PAGES if not page.get('robots')]
+    sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
+               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+               *urls, '</urlset>', '']
+    with open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8') as file:
+        file.write('\n'.join(sitemap))
+
 
 if __name__ == '__main__':
     build()
