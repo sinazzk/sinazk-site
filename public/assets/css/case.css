@@ -68,6 +68,7 @@ figure img{cursor:zoom-in;transition:box-shadow .5s var(--ease-out)}
 
 /* Proda process diagram */
 .dgm-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);padding:28px 0}
+.dgm-scroll svg rect{rx:0;ry:0}
 .dgm-cap{display:flex;justify-content:space-between;gap:16px;color:var(--color-text-tertiary)}
 .dgm-hint{display:none}
 @media (max-width:1260px){.dgm-hint{display:inline}}

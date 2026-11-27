@@ -25,7 +25,7 @@
 .hero-stage-wrap{position:relative;min-width:0;min-height:528px}
 .hero-stage-still{position:absolute;inset:0;display:block;width:100%;height:auto;max-width:544px;pointer-events:none;transition:opacity .3s ease}
 .hero-stage-wrap.is-live .hero-stage-still{opacity:0}
-.hero-stage{position:relative;min-width:0}
+.hero-stage{position:relative;min-width:0;--ss-ground-radius:0}
 @media (max-width:520px){.hero-stage-wrap{min-height:576px}}
 
 /* Logo strip */
