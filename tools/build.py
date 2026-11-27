@@ -13,7 +13,7 @@ SRC = os.path.join(ROOT, 'src', 'pages')
 OUT = os.path.join(ROOT, 'public')
 SITE = 'https://sinazk.com'
 CV = 'https://drive.google.com/file/d/1TX_gvWSUKH6xAQ0qkMHym0XR-vtFZKS3/view?usp=sharing'
-VERSION = '20261127a'  # bump to bust caches when CSS/JS change
+VERSION = '20261127c'  # bump to bust caches when CSS/JS change
 
 PAGES = [
     dict(src='index.html', out='index.html', path='/',
@@ -143,7 +143,7 @@ FOOTER = '''<footer class="site-footer">
   <span class="xh" style="right:0;top:10px;width:7px;height:1.5px"></span>
   <span class="xh" style="left:10px;top:0;width:1.5px;height:7px"></span>
   <span class="xh" style="left:10px;bottom:0;width:1.5px;height:7px"></span>
-  <span class="xh" style="left:9.5px;top:9.5px;width:2.5px;height:2.5px;border-radius:0;background:var(--color-bg-inverse)"></span>
+  <span class="xh" style="left:9.5px;top:9.5px;width:2.5px;height:2.5px;border-radius:4px;background:var(--color-bg-inverse)"></span>
 </div></div>
 </div>'''
 
