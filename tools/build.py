@@ -105,6 +105,8 @@ def head(p):
     lines.append('<script src="/assets/js/site.js?v=%s" defer></script>' % VERSION)
     for j in p.get('js', []):
         lines.append('<script src="%s?v=%s" defer></script>' % (j, VERSION))
+    if not p.get('robots'):
+        lines.append('<script src="/assets/js/clarity.js?v=%s" defer></script>' % VERSION)
     lines.append('</head>')
     return '\n'.join(lines)
 
