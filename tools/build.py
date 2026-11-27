@@ -105,8 +105,6 @@ def head(p):
     lines.append('<script src="/assets/js/site.js?v=%s" defer></script>' % VERSION)
     for j in p.get('js', []):
         lines.append('<script src="%s?v=%s" defer></script>' % (j, VERSION))
-    if not p.get('robots'):
-        lines.append('<script src="/assets/js/analytics.js?v=%s" defer></script>' % VERSION)
     lines.append('</head>')
     return '\n'.join(lines)
 
@@ -137,7 +135,7 @@ FOOTER = '''<footer class="site-footer">
       <a href="https://www.instagram.com/sinazzk/" class="nl" rel="me noopener" target="_blank">Instagram</a>
     </div>
   </div>
-{analytics}</footer>
+</footer>
 <div class="xhair" aria-hidden="true">
   <span class="xh-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg></span>
   <div class="xh-rot"><div class="xhair-in">
@@ -193,11 +191,7 @@ def build():
         if p.get('case'):
             c = CASES[p['case']]
             body += '\n' + next_band(c['next']) + '\n' + tblock(c)
-        analytics = '' if p.get('robots') else ('  <section data-analytics-preference hidden><div class="site-footer-in">'
-                                                '<span class="t-ps">Optional Microsoft Clarity analytics help improve the site.</span>'
-                                                '<button type="button" class="btn btn-line">Allow analytics</button></div></section>\n')
-        footer = FOOTER.replace('{analytics}', analytics)
-        doc = '\n'.join([head(p), '<body>', header(p), '<main id="main" tabindex="-1">', body, '</main>', footer, '</body>', '</html>', ''])
+        doc = '\n'.join([head(p), '<body>', header(p), '<main id="main" tabindex="-1">', body, '</main>', FOOTER, '</body>', '</html>', ''])
         out = os.path.join(OUT, p['out'])
         os.makedirs(os.path.dirname(out), exist_ok=True)
         open(out, 'w', encoding='utf-8').write(doc)
