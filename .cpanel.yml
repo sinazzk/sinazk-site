@@ -1,9 +1,4 @@
 ---
-# STAGING: deploys to new.sinazk.com and blocks search engines.
-# At launch: change DEPLOYPATH to /home/sinazkco/public_html/ and delete the two staging/ lines.
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/sinazkco/new.sinazk.com/
-    - /bin/cp -R public/. $DEPLOYPATH
-    - /bin/cp staging/robots.txt $DEPLOYPATH
-    - /bin/cp staging/.htaccess $DEPLOYPATH
+    - /bin/bash tools/deploy-production.sh

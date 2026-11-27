@@ -2,18 +2,22 @@
 
 The live site for Sina Zibakerdar's portfolio, hosted on hidata.org (cPanel shared hosting).
 
-## Staging
+## Production deployment
 
-Deploys currently go to **new.sinazk.com** (folder `/home/sinazkco/new.sinazk.com`), not the live site. The deploy step also copies `staging/robots.txt` and `staging/.htaccess`, which tell search engines not to index the staging site.
+cPanel deploys `main` to **sinazk.com**. In Git Version Control, open
+**Manage → Pull or Deploy**, choose **Update from Remote**, then
+**Deploy HEAD Commit**. The staging site at **new.sinazk.com** retains its last
+deployment.
 
-To launch: in `.cpanel.yml`, change `DEPLOYPATH` to `/home/sinazkco/public_html/` and remove the two `staging/` lines. Back up the old `public_html` first.
+The first production deploy prepares the new site before switching
+`public_html`. It moves the previous document root to
+`~/portfolio-production-backup/public_html`, keeps the WordPress database in
+place, and carries over the `.well-known` directory. Subsequent deploys update
+the new site in place.
 
-## How deploys work
-
-1. Push changes to `main` on GitHub.
-2. In cPanel → Git Version Control → Manage → **Pull or Deploy**:
-   - **Update from Remote** pulls the latest commit from GitHub.
-   - **Deploy HEAD Commit** runs `.cpanel.yml`, which copies `public/` into the deploy folder (see Staging).
+To roll back the first production release, move the new `public_html` to a
+private folder, then move `~/portfolio-production-backup/public_html` back to
+`~/public_html`. The old WordPress files retain their original database setup.
 
 ## Layout
 
